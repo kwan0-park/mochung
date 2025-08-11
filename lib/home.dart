@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column (
             children: [
               Welcome(),
-              const SectionTitle(text: '소중하고 감사한 당신을 초대합니다.', spacingTop: 60.0,),
+              const SectionTitle(text: '소중하고 감사한 당신을 초대합니다.', spacingTop: 80.0,),
               Invitation(),
               const SectionTitle(text: '갤러리', spacingTop: 60.0,),
               Gallery(),
