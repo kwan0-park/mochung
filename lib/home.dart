@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Gallery(),
               const SectionTitle(text: '오시는 길', spacingTop: 60.0,),
               Map(),
-              const SectionTitle(text: '예식 안내사항', spacingTop: 60.0,),
+              const SectionTitle(text: '안내사항', spacingTop: 60.0,),
               Guide(),
               const SectionTitle(text: '마음 전하는 곳', spacingTop: 60.0,),
               BankAccount(),
