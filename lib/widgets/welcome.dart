@@ -20,7 +20,7 @@ Widget _buildTitle() {
       Container (
         // height: 340.0,
         child: Image.asset(
-          'assets/images/real_intro.png',
+          'assets/images/welcome_getting_married.png',
           fit: BoxFit.fitWidth,
         ),
       ),
@@ -52,9 +52,9 @@ Widget _buildDday(BuildContext context) {
 }
 
 Widget _buildEventInfo() {
-  return const Column (
+  return Column (
     children: [
-      Text (
+      const Text (
         '관영과 보광',
         textAlign: TextAlign.center,
         style: TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),
@@ -69,14 +69,21 @@ Widget _buildEventInfo() {
       //   textAlign: TextAlign.center,
       //   style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 2),
       // ),
-      SizedBox(height: 20),
-      Text (
-        '2026년 2월 8일 일요일 13시',
+      Container (
+        height: 100,
+        child: Image.asset(
+          'assets/images/welcome_boris_barbara.png',
+          fit: BoxFit.contain,
+        ),
+      ),
+      const SizedBox(height: 20),
+      const Text (
+        '2026.02.08 SUN 1:00 PM',
         textAlign: TextAlign.center,
         style: TextStyle(fontSize: 22.0, height: 2),
         // style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w600, height: 2),
       ),
-      Text (
+      const Text (
         '노블발렌티 삼성점',
         textAlign: TextAlign.center,
         style: TextStyle(fontSize: 22.0, height: 2),

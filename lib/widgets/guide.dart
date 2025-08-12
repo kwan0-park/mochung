@@ -42,6 +42,18 @@ class Guide extends StatelessWidget {
             style: TextStyle(height: 2,),
             textAlign: TextAlign.center,
           ),
+
+          Text(
+            '꿀팁 안내',
+            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
+          ),
+          Text(
+            '숨어있는 전보광 친필사인을 찾아라!\n'
+            '청첩장에 번호가 무엇이냐!\n'
+            '축가는 세계 최고라던데!\n',
+            style: TextStyle(height: 2,),
+            textAlign: TextAlign.center,
+          ),
         ],
       )
     );
