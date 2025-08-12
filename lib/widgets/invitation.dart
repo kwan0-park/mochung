@@ -145,7 +145,7 @@ class Invitation extends StatelessWidget {
             Container (
               height: 100,
               child: Image.asset(
-                'assets/images/couple2.png', 
+                'assets/images/invitation_otter_cropped.png',
                 fit: BoxFit.contain,
               ),
             ),
