@@ -42,11 +42,12 @@ class _MapState extends State<Map> {
               style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
             ),
             const Text('서울 강남구 봉은사로 637',),
+            const Text('02-540-0711',),
             const SizedBox(height: 30),
 
             Container(
               width: 500,
-              height: 300,
+              height: 200,
               child: getMap(),
             ),
             const SizedBox(height: 10,),

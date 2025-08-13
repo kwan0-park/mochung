@@ -36,7 +36,7 @@ class SectionTitle extends StatelessWidget {
           textAlign: textAlign,
           style: const TextStyle(
             color: Color.fromRGBO(41, 82, 56, 1),
-            fontSize: 18,
+            fontSize: 20,
             fontWeight: FontWeight.w600,
           ),
           maxLines: 1,

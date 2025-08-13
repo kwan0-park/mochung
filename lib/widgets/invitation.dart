@@ -145,13 +145,18 @@ class Invitation extends StatelessWidget {
             Container (
               height: 100,
               child: Image.asset(
-                'assets/images/wizard.png', 
+                'assets/images/invitation_otter_cropped.png',
                 fit: BoxFit.contain,
               ),
             ),
             const SizedBox(height: 40),
             const AutoSizeText(
-              '잠들 때 서로의 손을 꼭 잡는 해달처럼,\n우리는 앞으로의 삶에서도 늘 손을 맞잡고 함께하겠습니다.\n흘러가는 시간 속에서도 서로를 놓지 않으며\n따뜻한 하루하루를 함께 만들어가려 합니다.',
+              '잠들 때 서로의 손을 꼭 잡는 해달처럼,\n'
+              '우리는 앞으로의 삶에서도 늘 손을 맞잡고 함께하겠습니다.\n'
+              '흘러가는 시간 속에서도 서로를 놓지 않으며\n'
+              '따뜻한 하루하루를 함께 만들어가려 합니다.\n'
+              '저희 두 사람의 새로운 시작을\n'
+              '여러분의 축복 속에서 함께하고 싶습니다.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 15,
@@ -162,7 +167,7 @@ class Invitation extends StatelessWidget {
             const SizedBox(height: 50),
             _buildName('박봉희', '김순례', '아들', '박관영'),
             const SizedBox(height: 10),
-            _buildName('전우소', '이민리', '딸', '  전보광'),
+            _buildName('전우소', '이민리', '딸  ', '전보광'),
             const SizedBox(height: 50),
             /*
             Container (
