@@ -53,7 +53,7 @@ Widget _buildDday(BuildContext context) {
 
 Widget _buildEventInfo() {
   return Container(
-    color: Colors.white,
+    color: const Color.fromARGB(255, 247, 245, 242),
     child: Column (
       children: [
         const Text (
