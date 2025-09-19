@@ -20,7 +20,7 @@ Widget _buildTitle() {
       Container (
         // height: 340.0,
         child: Image.asset(
-          'assets/images/welcome_getting_married.png',
+          'assets/images/welcome.png',
           fit: BoxFit.fitWidth,
         ),
       ),
