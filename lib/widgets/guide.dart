@@ -35,7 +35,7 @@ class Guide extends StatelessWidget {
             '예식 많이 즐겨주세요!\n'
             '사진 많이 찍어주세요!\n'
             '박수 많이 쳐주세요!\n'
-            '호응 많이 해주세요!\n',
+            '호응 많이 해주세요!',
             style: TextStyle(height: 2,),
             textAlign: TextAlign.center,
           ),
