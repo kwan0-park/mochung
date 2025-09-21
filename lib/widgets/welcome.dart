@@ -18,10 +18,10 @@ Widget _buildTitle() {
       ),
       */
       Container (
-        // height: 340.0,
+        height: 340.0,
         child: Image.asset(
           'assets/images/welcome.png',
-          fit: BoxFit.fitWidth,
+          //fit: BoxFit.fitWidth,
         ),
       ),
     ]
@@ -73,7 +73,7 @@ Widget _buildEventInfo() {
         // ),
         Container (
           height: 100,
-          color: Colors.white,
+          // color: Colors.white,
           child: Image.asset(
             'assets/images/welcome_boris_barbara.png',
             fit: BoxFit.contain,
@@ -102,6 +102,7 @@ class Welcome extends StatelessWidget {
     return Center(
       child: Container (
         width: 500.0,
+        color: const Color.fromARGB(255, 247, 245, 242),
         margin: const EdgeInsetsDirectional.all(20.0),
         child: Column (
           children: [
@@ -117,7 +118,7 @@ class Welcome extends StatelessWidget {
             //     fit: BoxFit.fitWidth,
             //   ),
             // ),
-            // const SizedBox(height: 30),
+            const SizedBox(height: 60),
           ],
         )
       )

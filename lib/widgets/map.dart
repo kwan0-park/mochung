@@ -57,10 +57,7 @@ class _MapState extends State<Map> {
               style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
             ),
             const Text(
-              '봉은사역 4번 출구에서 도보 5분 거리',
-              style: TextStyle(height: 2,)
-            ),
-            const Text(
+              '봉은사역 4번 출구에서 도보 5분 거리\n'
               '9호선 봉은사역 5번 출구 셔틀버스 운행',
               style: TextStyle(height: 2,)
             ),
@@ -70,10 +67,7 @@ class _MapState extends State<Map> {
               style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
             ),
             const Text(
-              '주차는 본관 100대, 별관 200대 가능합니다.',
-              style: TextStyle(height: 2,)
-            ),
-            const Text(
+              '주차는 본관 100대, 별관 200대 가능합니다.\n'
               '별관에서는 웨딩홀까지 셔틀버스가 운행됩니다.',
               style: TextStyle(height: 2,)
             ),
