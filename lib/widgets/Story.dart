@@ -32,6 +32,7 @@ class Story extends StatelessWidget {
               imagePath: 'assets/images/photo/person_b.jpg',
               ),
             ),
+          ),
         ],
       ),
     );
