@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
 import 'package:wedding_invitation/widgets/welcome.dart';
 import 'package:wedding_invitation/widgets/invitation.dart';
+import 'package:wedding_invitation/widgets/Story.dart';
 import 'package:wedding_invitation/widgets/gallery.dart';
 import 'package:wedding_invitation/widgets/map.dart';
 import 'package:wedding_invitation/widgets/guide.dart';
@@ -67,19 +68,19 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column (
             children: [
               Welcome(),
-              const SectionTitle(text: '소중하고 감사한 당신을 초대합니다.', spacingTop: 80.0,),
+              const SectionTitle(text: '소중하고 감사한 당신을 초대합니다.', spacingTop: 20.0,),
               Invitation(),
               const SectionTitle(text: '우리의 이야기', spacingTop: 60.0,),
-              // Story(),
+              Story(),
               const SectionTitle(text: '갤러리', spacingTop: 60.0,),
-              Gallery(),
+              Gallery(imageProviders: GalleryImagePaths.imageProviders,),
               const SectionTitle(text: '안내사항', spacingTop: 60.0,),
               Guide(),
               const SectionTitle(text: '오시는 길', spacingTop: 60.0,),
               Map(),
               const SectionTitle(text: '마음 전하는 곳', spacingTop: 60.0,),
               BankAccount(),
-              const SectionTitle(text: '방명록', spacingTop: 60.0,),
+              const SectionTitle(text: '참석 여부', spacingTop: 60.0,),
               // Guestbook(),
               const SectionTitle(text: '', spacingTop: 60.0,),
               DevelopedBy(),

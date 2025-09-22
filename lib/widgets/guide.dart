@@ -19,14 +19,13 @@ class Guide extends StatelessWidget {
             style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
           ),
           Text(
-            '식사는 XX분 전부터 가능합니다.\n'
+            '식사는 예식 30분 전부터 가능합니다.\n'
             '식사는 코스요리이며, 맥주는 무제한으로 제공됩니다.\n'
             '2층에서 식과 함께 먼저 식사할 수 있고,\n'
             '3층에서 예식 이후 식사할 수 있습니다.',
             style: TextStyle(height: 2,),
             textAlign: TextAlign.center,
           ),
-
           Text(
             '예식 안내',
             style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
@@ -39,15 +38,24 @@ class Guide extends StatelessWidget {
             style: TextStyle(height: 2,),
             textAlign: TextAlign.center,
           ),
-
+          //Text(
+          //  '꿀팁 안내',
+          //  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
+          //),
+          //Text(
+          //  '숨어있는 전보광 친필사인을 찾아라!\n'
+          //  '청첩장에 번호가 무엇이냐!\n'
+          //  '축가는 세계 최고라던데!',
+          //  style: TextStyle(height: 2,),
+          //  textAlign: TextAlign.center,
+          //),
           Text(
-            '꿀팁 안내',
+            '추가 안내',
             style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
           ),
           Text(
-            '숨어있는 전보광 친필사인을 찾아라!\n'
-            '청첩장에 번호가 무엇이냐!\n'
-            '축가는 세계 최고라던데!\n',
+            'ATM은 식장에 따로 없습니다.\n'
+            '화환은 정중히 사양합니다.\n',
             style: TextStyle(height: 2,),
             textAlign: TextAlign.center,
           ),
