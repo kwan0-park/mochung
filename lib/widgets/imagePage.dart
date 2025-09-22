@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:photo_view/photo_view.dart';
-import 'package:photo_view/photo_view_gallery.dart';
 
 enum NavigationDirection { left, right }
 
@@ -47,26 +45,26 @@ class _ImagePageState extends State<ImagePage> {
     return Scaffold(
       body: Stack(
         children: [
-          PhotoViewGallery.builder(
+          PageView.builder(
             itemCount: widget.imageProviders.length,
-            builder: (context, index) {
-              return PhotoViewGalleryPageOptions(
-                imageProvider: widget.imageProviders[index],
-                minScale: PhotoViewComputedScale.contained * 0.8,
-                maxScale: PhotoViewComputedScale.covered * 2,
-              );
-            },
-            backgroundDecoration: BoxDecoration(
-              color: Colors.black,
-            ),
-            pageController: _pageController,
-            enableRotation: false,
+            controller: _pageController,
             onPageChanged: (index) {
               setState(() {
                 _currentIndex = index;
               });
             },
-            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              return Center(
+                child: InteractiveViewer(
+                  panEnabled: false,
+                  scaleEnabled: false,
+                  child: Image(
+                    image: widget.imageProviders[index],
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              );
+            },
           ),
           Positioned(
             top: MediaQuery.of(context).size.height / 2,
