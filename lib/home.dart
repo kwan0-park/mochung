@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
               const SectionTitle(text: '우리의 이야기', spacingTop: 60.0,),
               // Story(),
               const SectionTitle(text: '갤러리', spacingTop: 60.0,),
-              Gallery(),
+              Gallery(imageProviders: GalleryImagePaths.imageProviders,),
               const SectionTitle(text: '안내사항', spacingTop: 60.0,),
               Guide(),
               const SectionTitle(text: '오시는 길', spacingTop: 60.0,),
