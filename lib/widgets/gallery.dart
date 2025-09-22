@@ -58,6 +58,7 @@ class _GalleryState extends State<Gallery> {
       ),
     );
   }
+}
 
 class GalleryImagePaths {
   static const List<String> paths = [
