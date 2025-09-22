@@ -43,6 +43,7 @@ class _ImagePageState extends State<ImagePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Stack(
         children: [
           PageView.builder(
@@ -124,18 +125,19 @@ class NavigationButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(30.0),
         onTap: ifEnd ? null : onPressed,
         child: Container(
-          padding: EdgeInsets.all(8.0),
+          width: 40.0,
+          height: 40.0,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: ifEnd ? Colors.grey : Color.fromRGBO(41, 82, 56, 100),
           ),
-          child: Align(
-            alignment: Alignment.center, // 아이콘을 정확한 가운데에 위치시킵니다.
+          child: Center(
             child: Icon(
               direction == NavigationDirection.left
                   ? Icons.arrow_back_ios
                   : Icons.arrow_forward_ios,
               color: Colors.white,
+              size: 20.0,
             ),
           ),
         ),
