@@ -16,22 +16,22 @@ class Story extends StatelessWidget {
             Expanded(
               child: Center(
                 child: _PersonCard(
-                name: '김철수',
-                hobby: '독서, 영화 감상',
+                name: '박관영',
+                hobby: '음악, 수영',
                 personality: '차분하고 상냥함',
-                imagePath: 'assets/images/photo/person_a.jpg',
+                imagePath: 'assets/images/person_pky.jpg',
                 ),
               ),
             ),
-            const SizedBox(width: 20.0),
+            SizedBox(width: 20.0),
             // 오른쪽 - B 인물 소개
             Expanded(
               child: Center(
                 child: _PersonCard(
-                name: '이영희',
-                hobby: '요리, 여행',
+                name: '전보광',
+                hobby: '노래, 인테리어',
                 personality: '활발하고 긍정적',
-                imagePath: 'assets/images/photo/person_b.jpg',
+                imagePath: 'assets/images/person_jbk.jpg',
                 ),
               ),
             ),
