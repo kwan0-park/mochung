@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
 import 'package:wedding_invitation/widgets/welcome.dart';
 import 'package:wedding_invitation/widgets/invitation.dart';
-import 'package:wedding_invitation/widgets/Story.dart';
+import 'package:wedding_invitation/widgets/story.dart';
 import 'package:wedding_invitation/widgets/gallery.dart';
 import 'package:wedding_invitation/widgets/map.dart';
 import 'package:wedding_invitation/widgets/guide.dart';

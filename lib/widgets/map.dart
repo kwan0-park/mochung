@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'dart:html' as html;
-import 'dart:ui' as ui;
+import 'dart:ui_web' as ui;
 
 class Map extends StatefulWidget {
   @override
@@ -12,7 +12,6 @@ class _MapState extends State<Map> {
   final API_KEY = "AIzaSyBA0lA83HAYq0dIAIncAznqQgW7RWR0nNY";
 
   Widget getMap() {
-    // ignore: undefined_prefixed_name
     ui.platformViewRegistry.registerViewFactory('iframe', (int viewId) {
       var iframe = html.IFrameElement();
       iframe.src = 'https://www.google.com/maps/embed/v1/place?key=$API_KEY&q=노블발렌티 삼성점';

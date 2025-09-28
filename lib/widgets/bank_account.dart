@@ -35,7 +35,7 @@ class BankAccount extends StatelessWidget {
                 },
                 child: const Text('복사하기'),
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.green
+                  backgroundColor: Colors.green
                 )
               ),
             ],
