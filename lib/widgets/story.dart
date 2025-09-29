@@ -16,10 +16,10 @@ class Story extends StatelessWidget {
             Expanded(
               child: Center(
                 child: _PersonCard(
-                name: '박관영',
-                hobby: '음악, 수영',
-                personality: '차분하고 상냥함',
-                imagePath: 'assets/images/person_pky.jpg',
+                  name: '박관영',
+                  hobby: '음악, 수영',
+                  personality: '차분하고 상냥함',
+                  imagePath: 'assets/images/photo/person_pky.jpg',
                 ),
               ),
             ),
@@ -28,10 +28,10 @@ class Story extends StatelessWidget {
             Expanded(
               child: Center(
                 child: _PersonCard(
-                name: '전보광',
-                hobby: '노래, 인테리어',
-                personality: '활발하고 긍정적',
-                imagePath: 'assets/images/person_jbk.jpg',
+                  name: '전보광',
+                  hobby: '노래, 인테리어',
+                  personality: '활발하고 긍정적',
+                  imagePath: 'assets/images/photo/person_jbk.jpg',
                 ),
               ),
             ),
