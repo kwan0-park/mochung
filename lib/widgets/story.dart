@@ -5,35 +5,38 @@ class Story extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(20.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // 왼쪽 - A 인물 소개
-          Expanded(
-            child: Center(
-              child: _PersonCard(
-              name: '김철수',
-              hobby: '독서, 영화 감상',
-              personality: '차분하고 상냥함',
-              imagePath: 'assets/images/photo/person_a.jpg',
+    return Center(
+      child: Container(
+        width: 500.0,
+        margin: const EdgeInsets.all(20.0),
+        child: const Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // 왼쪽 - A 인물 소개
+            Expanded(
+              child: Center(
+                child: _PersonCard(
+                  name: '박관영',
+                  hobby: '음악, 수영',
+                  personality: '차분하고 상냥함',
+                  imagePath: 'assets/images/photo/person_pky.jpg',
+                ),
               ),
             ),
-          ),
-          const SizedBox(width: 20.0),
-          // 오른쪽 - B 인물 소개
-          Expanded(
-            child: Center(
-              child: _PersonCard(
-              name: '이영희',
-              hobby: '요리, 여행',
-              personality: '활발하고 긍정적',
-              imagePath: 'assets/images/photo/person_b.jpg',
+            SizedBox(width: 20.0),
+            // 오른쪽 - B 인물 소개
+            Expanded(
+              child: Center(
+                child: _PersonCard(
+                  name: '전보광',
+                  hobby: '노래, 인테리어',
+                  personality: '활발하고 긍정적',
+                  imagePath: 'assets/images/photo/person_jbk.jpg',
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -56,6 +59,7 @@ class _PersonCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4.0,
+      color: Colors.white,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.0),
       ),
