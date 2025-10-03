@@ -64,24 +64,18 @@ class _GalleryState extends State<Gallery> {
 
 class GalleryImagePaths {
   static const List<String> paths = [
-    'assets/images/photo/m01_photos.jpg',
-    'assets/images/photo/m02_photos.jpg',
-    'assets/images/photo/m03_photos.jpg',
-    'assets/images/photo/m04_photos.jpg',
-    'assets/images/photo/m05_photos.jpg',
-    'assets/images/photo/m06_photos.jpg',
-    'assets/images/photo/m07_photos.jpg',
-    'assets/images/photo/m08_photos.jpg',
-    'assets/images/photo/m09_photos.jpg',
-    'assets/images/photo/m10_photos.jpg',
-    'assets/images/photo/m11_photos.jpg',
-    'assets/images/photo/m12_photos.jpg',
-    'assets/images/photo/m13_photos.jpg',
-    'assets/images/photo/m14_photos.jpg',
-    'assets/images/photo/m15_photos.jpg',
-    'assets/images/photo/m16_photos.jpg',
-    'assets/images/photo/m17_photos.jpg',
-    'assets/images/photo/m18_photos.jpg',
+    'assets/images/photos/m01_photos.webp',
+    'assets/images/photos/m02_photos.webp',
+    'assets/images/photos/m03_photos.webp',
+    'assets/images/photos/m04_photos.webp',
+    'assets/images/photos/m05_photos.webp',
+    'assets/images/photos/m06_photos.webp',
+    'assets/images/photos/m07_photos.webp',
+    'assets/images/photos/m08_photos.webp',
+    'assets/images/photos/m09_photos.webp',
+    'assets/images/photos/m10_photos.webp',
+    'assets/images/photos/m11_photos.webp',
+    'assets/images/photos/m12_photos.webp',
   ];
 
   static List<ImageProvider> get imageProviders => 

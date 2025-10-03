@@ -20,7 +20,7 @@ Widget _buildTitle() {
       Container (
         height: 340.0,
         child: Image.asset(
-          'assets/images/welcome.png',
+          'assets/images/welcome.webp',
           //fit: BoxFit.fitWidth,
         ),
       ),
@@ -39,7 +39,7 @@ Widget _buildDday(BuildContext context) {
     children: [
       const Text(
         '2026년 2월 8일 일요일 13시',
-        style: TextStyle(fontSize: 18),
+        style: TextStyle(fontSize: 18),   
       ),
       const SizedBox(height: 10),
       AutoSizeText(
