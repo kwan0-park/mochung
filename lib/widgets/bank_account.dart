@@ -49,46 +49,66 @@ class BankAccount extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 500.0,
-      child: Column(
-        children: [
-          const SizedBox(height: 20),
-          ExpansionTile(
-            title: Center(
-              child: Text(
-                '       신랑측 계좌번호',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, color: indiBlueColor),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Column(
+          children: [
+            const SizedBox(height: 20),
+            ExpansionTile(
+              title: Center(
+                child: Text(
+                  '       신랑측 계좌번호',
+                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, color: indiBlueColor),
+                ),
               ),
-            ),
-            initiallyExpanded: false,
-            backgroundColor: Colors.white,
-            shape: Border.all(color: Colors.transparent),
-            children: <Widget>[
-              _buildExpansionItem(context, '농협', 'TBD', '박봉희'),
-              const SizedBox(height: 10),
-              _buildExpansionItem(context, '국민은행', 'TBD', '김순례'),
-              const SizedBox(height: 10),
-              _buildExpansionItem(context, '새마을금고', '9003-242628-139', '박관영'),
-            ]
-          ),
-          ExpansionTile(
-            title: Center(
-              child: Text(
-                '       신부측 계좌번호',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, color: indiPinkColor),
+              initiallyExpanded: false,
+              backgroundColor: Colors.white,
+              collapsedBackgroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+                side: const BorderSide(width: 0.25, color: Color.fromRGBO(41, 82, 56, 1.0)),
               ),
+              collapsedShape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+                side: const BorderSide(width: 0.25, color: Color.fromRGBO(41, 82, 56, 1.0)),
+              ),
+              children: <Widget>[
+                _buildExpansionItem(context, '국민은행', '057-24-0338-924', '박봉희'),
+                const SizedBox(height: 10),
+                _buildExpansionItem(context, '국민은행', '353-21-0165-491', '김순례'),
+                const SizedBox(height: 10),
+                _buildExpansionItem(context, '새마을금고', '9003-242628-139', '박관영'),
+              ]
             ),
-            initiallyExpanded: false,
-            backgroundColor: Colors.white,
-            shape: Border.all(color: Colors.transparent),
-            children: <Widget>[
-              _buildExpansionItem(context, '대전', 'TBD', '전우소'),
-              const SizedBox(height: 10),
-              _buildExpansionItem(context, '대전', 'TBD', '이민리'),
-              const SizedBox(height: 10),
-              _buildExpansionItem(context, '카카오뱅크', '3333-0987-73509', '전보광'),
-            ]
-          ),
-        ],
+            const SizedBox(height: 10),
+            ExpansionTile(
+              title: Center(
+                child: Text(
+                  '       신부측 계좌번호',
+                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, color: indiPinkColor),
+                ),
+              ),
+              initiallyExpanded: false,
+              backgroundColor: Colors.white,
+              collapsedBackgroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+                side: const BorderSide(width: 0.25, color: Color.fromRGBO(41, 82, 56, 1.0)),
+              ),
+              collapsedShape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+                side: const BorderSide(width: 0.25, color: Color.fromRGBO(41, 82, 56, 1.0)),
+              ),
+              children: <Widget>[
+                _buildExpansionItem(context, '대전', 'TBD', '전우소'),
+                const SizedBox(height: 10),
+                _buildExpansionItem(context, '대전', 'TBD', '이민리'),
+                const SizedBox(height: 10),
+                _buildExpansionItem(context, '카카오뱅크', '3333-0987-73509', '전보광'),
+              ]
+            ),
+          ],
+        ),
       ),
     );
   }

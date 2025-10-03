@@ -61,7 +61,8 @@ class _PersonCard extends StatelessWidget {
       elevation: 4.0,
       color: Colors.white,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12.0),
+        borderRadius: BorderRadius.circular(20.0),
+        side: const BorderSide(width: 0.25, color: Color.fromRGBO(41, 82, 56, 1.0)),
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
