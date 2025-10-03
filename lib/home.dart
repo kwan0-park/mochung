@@ -74,15 +74,15 @@ class _MyHomePageState extends State<MyHomePage> {
     alignment: Alignment.topCenter,
     children: [
       Scaffold (
-        body: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/paper.webp'),
-              fit: BoxFit.cover,
-              //opacity: 0.3,
+        body: SingleChildScrollView (
+          child: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/paper.webp'),
+                repeat: ImageRepeat.repeat,
+                //opacity: 0.3,
+              ),
             ),
-          ),
-          child: SingleChildScrollView (
             child: Column (
               children: [
                 Welcome(),
