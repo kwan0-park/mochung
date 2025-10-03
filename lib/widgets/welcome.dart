@@ -18,6 +18,13 @@ Widget _buildTitle() {
       ),
       */
       Container (
+        height: 100,
+        child: Image.asset(
+          'assets/images/ribbon.png',
+          fit: BoxFit.contain,
+        ),
+      ),
+      Container (
         height: 340.0,
         child: Image.asset(
           'assets/images/welcome.webp',
@@ -73,7 +80,6 @@ Widget _buildEventInfo() {
         // ),
         Container (
           height: 100,
-          // color: Colors.white,
           child: Image.asset(
             'assets/images/welcome_boris_barbara.webp',
             fit: BoxFit.contain,
