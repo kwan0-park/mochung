@@ -9,6 +9,7 @@ import 'package:wedding_invitation/widgets/map.dart';
 import 'package:wedding_invitation/widgets/guide.dart';
 import 'package:wedding_invitation/widgets/bank_account.dart';
 import 'package:wedding_invitation/widgets/developed_by.dart';
+import 'package:wedding_invitation/widgets/attendance_modal.dart';
 import 'section_title.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -49,6 +50,15 @@ class _MyHomePageState extends State<MyHomePage> {
     // controller.play();
     _controllerLeft.play();
     _controllerRight.play();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AttendanceModal();
+        },
+      );
+    });
   }
 
   @override
@@ -88,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Map(),
                 const SectionTitle(text: '마음 전하는 곳', spacingTop: 60.0,),
                 BankAccount(),
-                const SectionTitle(text: '참석 여부', spacingTop: 60.0,),
+                // const SectionTitle(text: '참석 여부', spacingTop: 60.0,),
                 // Guestbook(),
                 const SectionTitle(text: '', spacingTop: 60.0,),
                 DevelopedBy(),
