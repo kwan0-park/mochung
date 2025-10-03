@@ -64,27 +64,36 @@ class _MyHomePageState extends State<MyHomePage> {
     alignment: Alignment.topCenter,
     children: [
       Scaffold (
-        body: SingleChildScrollView (
-          child: Column (
-            children: [
-              Welcome(),
-              const SectionTitle(text: '소중하고 감사한 당신을 초대합니다.', spacingTop: 20.0,),
-              Invitation(),
-              const SectionTitle(text: '우리의 이야기', spacingTop: 60.0,),
-              Story(),
-              const SectionTitle(text: '갤러리', spacingTop: 60.0,),
-              Gallery(imageProviders: GalleryImagePaths.imageProviders, width: 500.0,),
-              const SectionTitle(text: '안내사항', spacingTop: 60.0,),
-              Guide(),
-              const SectionTitle(text: '오시는 길', spacingTop: 60.0,),
-              Map(),
-              const SectionTitle(text: '마음 전하는 곳', spacingTop: 60.0,),
-              BankAccount(),
-              const SectionTitle(text: '참석 여부', spacingTop: 60.0,),
-              // Guestbook(),
-              const SectionTitle(text: '', spacingTop: 60.0,),
-              DevelopedBy(),
-            ],
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/paper.webp'),
+              fit: BoxFit.cover,
+              //opacity: 0.3,
+            ),
+          ),
+          child: SingleChildScrollView (
+            child: Column (
+              children: [
+                Welcome(),
+                const SectionTitle(text: '소중하고 감사한 당신을 초대합니다.', spacingTop: 20.0,),
+                Invitation(),
+                const SectionTitle(text: '우리의 이야기', spacingTop: 60.0,),
+                Story(),
+                const SectionTitle(text: '갤러리', spacingTop: 60.0,),
+                Gallery(imageProviders: GalleryImagePaths.imageProviders, width: 500.0,),
+                const SectionTitle(text: '안내사항', spacingTop: 60.0,),
+                Guide(),
+                const SectionTitle(text: '오시는 길', spacingTop: 60.0,),
+                Map(),
+                const SectionTitle(text: '마음 전하는 곳', spacingTop: 60.0,),
+                BankAccount(),
+                const SectionTitle(text: '참석 여부', spacingTop: 60.0,),
+                // Guestbook(),
+                const SectionTitle(text: '', spacingTop: 60.0,),
+                DevelopedBy(),
+              ],
+            ),
           ),
         ),
       ),
