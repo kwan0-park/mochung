@@ -75,7 +75,7 @@ Widget _buildEventInfo() {
           height: 100,
           // color: Colors.white,
           child: Image.asset(
-            'assets/images/welcome_boris_barbara.png',
+            'assets/images/welcome_boris_barbara.webp',
             fit: BoxFit.contain,
           ),
         ),
