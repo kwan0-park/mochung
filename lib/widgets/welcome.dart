@@ -4,26 +4,13 @@ import 'package:auto_size_text/auto_size_text.dart';
 Widget _buildTitle() {
   return Column (
     children: [
-      /*
-      const Text (
-        '26 | 02 | 08',
+      const AutoSizeText (
+        '"We Are Getting Married"',
         textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+        style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.w900),
+        maxLines: 1,
       ),
-      const SizedBox(height: 8),
-      const Text (
-        'SUNDAY',
-        textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w700, letterSpacing: 2.0),
-      ),
-      */
-      Container (
-        height: 100,
-        child: Image.asset(
-          'assets/images/ribbon.png',
-          fit: BoxFit.contain,
-        ),
-      ),
+      const SizedBox(height: 96),
       Container (
         height: 340.0,
         child: Image.asset(
