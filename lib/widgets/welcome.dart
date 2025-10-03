@@ -53,7 +53,7 @@ Widget _buildDday(BuildContext context) {
 
 Widget _buildEventInfo() {
   return Container(
-    color: const Color.fromARGB(255, 247, 245, 242),
+    //color: const Color.fromARGB(255, 247, 245, 242),
     child: Column (
       children: [
         const Text (
@@ -102,7 +102,7 @@ class Welcome extends StatelessWidget {
     return Center(
       child: Container (
         width: 500.0,
-        color: const Color.fromARGB(255, 247, 245, 242),
+        //color: const Color.fromARGB(255, 247, 245, 242),
         margin: const EdgeInsetsDirectional.all(20.0),
         child: Column (
           children: [
