@@ -33,7 +33,7 @@ class BankAccount extends StatelessWidget {
                 onPressed: () {
                   _copyToClipboard(accountNumber, context);
                 },
-                child: const Text('복사하기'),
+                child: const Text('복사'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green
                 )
@@ -73,9 +73,9 @@ class BankAccount extends StatelessWidget {
                 side: const BorderSide(width: 0.25, color: Color.fromRGBO(41, 82, 56, 1.0)),
               ),
               children: <Widget>[
-                _buildExpansionItem(context, '국민은행', '057-24-0338-924', '박봉희'),
+                _buildExpansionItem(context, '국민', '057-24-0338-924', '박봉희'),
                 const SizedBox(height: 10),
-                _buildExpansionItem(context, '국민은행', '353-21-0165-491', '김순례'),
+                _buildExpansionItem(context, '국민', '353-21-0165-491', '김순례'),
                 const SizedBox(height: 10),
                 _buildExpansionItem(context, '새마을금고', '9003-242628-139', '박관영'),
               ]
@@ -100,11 +100,11 @@ class BankAccount extends StatelessWidget {
                 side: const BorderSide(width: 0.25, color: Color.fromRGBO(41, 82, 56, 1.0)),
               ),
               children: <Widget>[
-                _buildExpansionItem(context, '대전', 'TBD', '전우소'),
+                _buildExpansionItem(context, '하나', '64791094453707', '전우소'),
                 const SizedBox(height: 10),
-                _buildExpansionItem(context, '대전', 'TBD', '이민리'),
+                _buildExpansionItem(context, '신한', '110275673426', '이민리'),
                 const SizedBox(height: 10),
-                _buildExpansionItem(context, '카카오뱅크', '3333-0987-73509', '전보광'),
+                _buildExpansionItem(context, '우리', '1002347748808', '전보광'),
               ]
             ),
           ],
