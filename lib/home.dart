@@ -92,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
               image: DecorationImage(
                 image: AssetImage('assets/images/paper.webp'),
                 repeat: ImageRepeat.repeat,
-                //opacity: 0.3,
+                opacity: 0.3,
               ),
             ),
             child: Column (
