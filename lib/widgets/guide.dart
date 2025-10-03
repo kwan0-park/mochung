@@ -19,25 +19,25 @@ class Guide extends StatelessWidget {
             style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
           ),
           Text(
-            '식사는 예식 30분 전부터 가능합니다.\n'
             '식사는 코스요리이며, 맥주는 무제한으로 제공됩니다.\n'
+            '식사는 예식 30분 전부터 가능합니다.\n'
             '2층에서 식과 함께 먼저 식사할 수 있고,\n'
             '3층에서 예식 이후 식사할 수 있습니다.',
             style: TextStyle(height: 2,),
             textAlign: TextAlign.center,
           ),
-          Text(
-            '예식 안내',
-            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
-          ),
-          Text(
-            '예식 많이 즐겨주세요!\n'
-            '사진 많이 찍어주세요!\n'
-            '박수 많이 쳐주세요!\n'
-            '호응 많이 해주세요!',
-            style: TextStyle(height: 2,),
-            textAlign: TextAlign.center,
-          ),
+          // Text(
+          //   '예식 안내',
+          //   style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
+          // ),
+          // Text(
+          //   '예식 많이 즐겨주세요!\n'
+          //   '사진 많이 찍어주세요!\n'
+          //   '박수 많이 쳐주세요!\n'
+          //   '호응 많이 해주세요!',
+          //   style: TextStyle(height: 2,),
+          //   textAlign: TextAlign.center,
+          // ),
           //Text(
           //  '꿀팁 안내',
           //  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
@@ -54,8 +54,8 @@ class Guide extends StatelessWidget {
             style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
           ),
           Text(
-            'ATM은 식장에 따로 없습니다.\n'
-            '화환은 정중히 사양합니다.\n',
+            '화환은 정중히 사양합니다.\n'
+            '식장에 ATM이 없지만, 식장 주변에 여러 은행 지점이 있습니다.\n',
             style: TextStyle(height: 2,),
             textAlign: TextAlign.center,
           ),
