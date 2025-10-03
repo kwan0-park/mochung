@@ -52,13 +52,25 @@ class _MyHomePageState extends State<MyHomePage> {
     _controllerRight.play();
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AttendanceModal();
-        },
-      );
+      openAttendanceFlow(context);
     });
+  }
+
+  void openAttendanceFlow(BuildContext context) {
+    showAttendanceInfoDialog(
+      context,
+      onPrimaryPressed: () {
+        Navigator.of(context).pop(); // 안내 모달 닫기
+        showDialog(
+          context: context,
+          builder: (_) => const AttendanceFormDialog(),
+        );
+      },
+      // 필요 시 여기서 텍스트들을 주입해서 커스터마이즈 가능
+      // dateTimeText: '2025.11.01. 토요일 2:00 PM',
+      // streetAddress: '대구 수성구 팔현길 212',
+      // venueName: '대구 호텔인터불고 (만촌) 웨딩파크빌리지',
+    );
   }
 
   @override
