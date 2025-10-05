@@ -151,12 +151,12 @@ class Invitation extends StatelessWidget {
             ),
             const SizedBox(height: 40),
             const AutoSizeText(
-              '잠들 때 서로의 손을 꼭 잡는 해달처럼,\n'
-              '우리는 앞으로의 삶에서도 늘 손을 맞잡고 함께하겠습니다.\n'
+              '손 꼭 잡고 함께 물 위를 떠다니는 두 해달처럼,\n'
+              '좋은 일도 힘든 일도 함께 하고 싶은 사람을 만났습니다.\n'
               '흘러가는 시간 속에서도 서로를 놓지 않으며\n'
               '따뜻한 하루하루를 함께 만들어가려 합니다.\n'
-              '저희 두 사람의 새로운 시작을\n'
-              '여러분의 축복 속에서 함께하고 싶습니다.',
+              '귀한 걸음 하시어 새로운 시작을 축복해주시면\n'
+              '감사한 마음으로 잘 살겠습니다.',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 15,
@@ -165,9 +165,9 @@ class Invitation extends StatelessWidget {
             ),
 
             const SizedBox(height: 50),
-            _buildName('전우소', '이민리', '딸  ', '보광'),
+            _buildName('전우소', '이민리', '장녀', '보광'),
             const SizedBox(height: 10),
-            _buildName('박봉희', '김순례', '아들', '관영'),
+            _buildName('박봉희', '김순례', '장남', '관영'),
             const SizedBox(height: 50),
             /*
             Container (

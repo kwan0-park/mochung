@@ -17,31 +17,33 @@ class BankAccount extends StatelessWidget {
     );
   }
 
-  Widget _buildExpansionItem(BuildContext context, String bank, String accountNumber, String owner) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center, // 여기를 추가하여 가운데 정렬
-      children: [
-        Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                bank + ' ' + accountNumber + ' (' + owner + ')    ',
-                style: TextStyle(fontWeight: FontWeight.w200,)
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  _copyToClipboard(accountNumber, context);
-                },
-                child: const Text('복사하기'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green
-                )
-              ),
-            ],
+  Widget _buildExpansionItem(BuildContext context, String bank, String account, String name) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15.0), // 좌우 15px 여백
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Text(
+              '$bank $account ($name)',
+              style: const TextStyle(fontSize: 14.0),
+            ),
           ),
-        ),
-      ],
+          ElevatedButton(
+            onPressed: () {
+              Clipboard.setData(ClipboardData(text: account));
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text("계좌번호가 복사되었습니다.")),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.green,
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            ),
+            child: const Text("복사"),
+          ),
+        ],
+      ),
     );
   }
 
@@ -73,11 +75,12 @@ class BankAccount extends StatelessWidget {
                 side: const BorderSide(width: 0.25, color: Color.fromRGBO(41, 82, 56, 1.0)),
               ),
               children: <Widget>[
-                _buildExpansionItem(context, '국민은행', '057-24-0338-924', '박봉희'),
+                _buildExpansionItem(context, '국민', '057-24-0338-924', '박봉희'),
                 const SizedBox(height: 10),
-                _buildExpansionItem(context, '국민은행', '353-21-0165-491', '김순례'),
+                _buildExpansionItem(context, '국민', '353-21-0165-491', '김순례'),
                 const SizedBox(height: 10),
                 _buildExpansionItem(context, '새마을금고', '9003-242628-139', '박관영'),
+                const SizedBox(height: 10),
               ]
             ),
             const SizedBox(height: 10),
@@ -100,11 +103,12 @@ class BankAccount extends StatelessWidget {
                 side: const BorderSide(width: 0.25, color: Color.fromRGBO(41, 82, 56, 1.0)),
               ),
               children: <Widget>[
-                _buildExpansionItem(context, '대전', 'TBD', '전우소'),
+                _buildExpansionItem(context, '하나', '64791094453707', '전우소'),
                 const SizedBox(height: 10),
-                _buildExpansionItem(context, '대전', 'TBD', '이민리'),
+                _buildExpansionItem(context, '신한', '110275673426', '이민리'),
                 const SizedBox(height: 10),
-                _buildExpansionItem(context, '카카오뱅크', '3333-0987-73509', '전보광'),
+                _buildExpansionItem(context, '우리', '1002347748808', '전보광'),
+                const SizedBox(height: 10),
               ]
             ),
           ],

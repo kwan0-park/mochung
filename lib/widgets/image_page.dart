@@ -132,12 +132,13 @@ class NavigationButton extends StatelessWidget {
             color: ifEnd ? Colors.grey : Color.fromRGBO(41, 82, 56, 100),
           ),
           child: Center(
-            child: Icon(
-              direction == NavigationDirection.left
-                  ? Icons.arrow_back_ios
-                  : Icons.arrow_forward_ios,
-              color: Colors.white,
-              size: 20.0,
+            child: Transform.scale(
+              scaleX: direction == NavigationDirection.left ? -1 : 1,
+              child: const Icon(
+                Icons.arrow_forward_ios,
+                color: Colors.white,
+                size: 20.0,
+              ),
             ),
           ),
         ),

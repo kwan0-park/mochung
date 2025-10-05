@@ -9,6 +9,7 @@ import 'package:wedding_invitation/widgets/map.dart';
 import 'package:wedding_invitation/widgets/guide.dart';
 import 'package:wedding_invitation/widgets/bank_account.dart';
 import 'package:wedding_invitation/widgets/developed_by.dart';
+import 'package:wedding_invitation/widgets/attendance_modal.dart';
 import 'section_title.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -49,6 +50,27 @@ class _MyHomePageState extends State<MyHomePage> {
     // controller.play();
     _controllerLeft.play();
     _controllerRight.play();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      openAttendanceFlow(context);
+    });
+  }
+
+  void openAttendanceFlow(BuildContext context) {
+    showAttendanceInfoDialog(
+      context,
+      onPrimaryPressed: () {
+        Navigator.of(context).pop(); // 안내 모달 닫기
+        showDialog(
+          context: context,
+          builder: (_) => const AttendanceFormDialog(),
+        );
+      },
+      // 필요 시 여기서 텍스트들을 주입해서 커스터마이즈 가능
+      // dateTimeText: '2025.11.01. 토요일 2:00 PM',
+      // streetAddress: '대구 수성구 팔현길 212',
+      // venueName: '대구 호텔인터불고 (만촌) 웨딩파크빌리지',
+    );
   }
 
   @override
@@ -64,15 +86,15 @@ class _MyHomePageState extends State<MyHomePage> {
     alignment: Alignment.topCenter,
     children: [
       Scaffold (
-        body: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/paper.webp'),
-              fit: BoxFit.cover,
-              //opacity: 0.3,
+        body: SingleChildScrollView (
+          child: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/paper.webp'),
+                repeat: ImageRepeat.repeat,
+                opacity: 0.3,
+              ),
             ),
-          ),
-          child: SingleChildScrollView (
             child: Column (
               children: [
                 Welcome(),
@@ -88,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Map(),
                 const SectionTitle(text: '마음 전하는 곳', spacingTop: 60.0,),
                 BankAccount(),
-                const SectionTitle(text: '참석 여부', spacingTop: 60.0,),
+                // const SectionTitle(text: '참석 여부', spacingTop: 60.0,),
                 // Guestbook(),
                 const SectionTitle(text: '', spacingTop: 60.0,),
                 DevelopedBy(),
