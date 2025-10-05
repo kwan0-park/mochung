@@ -29,13 +29,12 @@ class _MapState extends State<Map> {
         margin: const EdgeInsetsDirectional.all(20.0),
         child: Column(
           children: [
-            // Container (
-            //   height: 150.0,
-            //   child: Image.asset(
-            //     'assets/images/express.png',
-            //     fit: BoxFit.fitWidth,
-            //   ),
-            // ),
+            Container (
+              child: Image.asset(
+                'assets/images/map.webp',
+                fit: BoxFit.fitWidth,
+              ),
+            ),
             const Text(
               '노블발렌티 삼성점',
               style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
@@ -44,12 +43,12 @@ class _MapState extends State<Map> {
             const Text('02-540-0711',),
             const SizedBox(height: 30),
 
-            Container(
-              width: 500,
-              height: 200,
-              child: getMap(),
-            ),
-            const SizedBox(height: 10,),
+            // Container(
+            //   width: 500,
+            //   height: 200,
+            //   child: getMap(),
+            // ),
+            // const SizedBox(height: 10,),
 
             const Text(
               '교통 안내',
