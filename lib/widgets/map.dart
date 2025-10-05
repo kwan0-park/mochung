@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'dart:html' as html;
-import 'dart:ui_web' as ui;
+import 'package:map_launcher/map_launcher.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Map extends StatefulWidget {
   @override
@@ -9,17 +9,46 @@ class Map extends StatefulWidget {
 }
 
 class _MapState extends State<Map> {
-  final API_KEY = "AIzaSyBA0lA83HAYq0dIAIncAznqQgW7RWR0nNY";
+  _launchMaps() async {
+    final availableMaps = await MapLauncher.installedMaps;
+    final destination = Coords(37.515488, 127.064848);
+    const destinationTitle = "노블발렌티 삼성점";
 
-  Widget getMap() {
-    ui.platformViewRegistry.registerViewFactory('iframe', (int viewId) {
-      var iframe = html.IFrameElement();
-      iframe.src = 'https://www.google.com/maps/embed/v1/place?key=$API_KEY&q=노블발렌티 삼성점';
-      iframe.style.border = 'none';
-      return iframe;
-    });
-
-    return const HtmlElementView(viewType: 'iframe');
+    if (availableMaps.length > 1) {
+      showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return SafeArea(
+            child: SingleChildScrollView(
+              child: Container(
+                child: Wrap(
+                  children: <Widget>[
+                    for (var map in availableMaps)
+                      ListTile(
+                        onTap: () => map.showDirections(
+                          destination: destination,
+                          destinationTitle: destinationTitle,
+                        ),
+                        title: Text(map.mapName),
+                        leading: SvgPicture.asset(
+                          map.icon,
+                          height: 30.0,
+                          width: 30.0,
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+      );
+    } else if (availableMaps.length == 1) {
+      await availableMaps.first.showDirections(
+        destination: destination,
+        destinationTitle: destinationTitle,
+      );
+    }
   }
 
   @override
@@ -29,12 +58,20 @@ class _MapState extends State<Map> {
         margin: const EdgeInsetsDirectional.all(20.0),
         child: Column(
           children: [
-            Container (
+            const SizedBox(height: 12),
+            ClipRRect (
+              borderRadius: BorderRadius.circular(20),
               child: Image.asset(
                 'assets/images/map.webp',
-                fit: BoxFit.fitWidth,
+                fit: BoxFit.cover,
               ),
             ),
+            const SizedBox(height: 12),
+            ElevatedButton(
+              onPressed: _launchMaps,
+              child: const Text('지도로 길 찾기'),
+            ),
+            const SizedBox(height: 12),
             const Text(
               '노블발렌티 삼성점',
               style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
@@ -42,13 +79,6 @@ class _MapState extends State<Map> {
             const Text('서울 강남구 봉은사로 637',),
             const Text('02-540-0711',),
             const SizedBox(height: 30),
-
-            // Container(
-            //   width: 500,
-            //   height: 200,
-            //   child: getMap(),
-            // ),
-            // const SizedBox(height: 10,),
 
             const Text(
               '교통 안내',
@@ -79,4 +109,3 @@ class _MapState extends State<Map> {
     );
   }
 }
-
