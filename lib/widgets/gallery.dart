@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wedding_invitation/widgets/imagePage.dart';
+import 'package:wedding_invitation/widgets/image_page.dart';
 
 class Gallery extends StatefulWidget {
   final List<ImageProvider> imageProviders;
