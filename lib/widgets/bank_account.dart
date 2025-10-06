@@ -24,9 +24,12 @@ class BankAccount extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
-            child: Text(
+            child: AutoSizeText(
               '$bank $account ($name)',
               style: const TextStyle(fontSize: 14.0),
+              minFontSize: 10,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
           ElevatedButton(
