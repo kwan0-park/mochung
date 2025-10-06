@@ -10,6 +10,7 @@ import 'package:wedding_invitation/widgets/guide.dart';
 import 'package:wedding_invitation/widgets/bank_account.dart';
 import 'package:wedding_invitation/widgets/developed_by.dart';
 import 'package:wedding_invitation/widgets/attendance_modal.dart';
+import 'package:wedding_invitation/widgets/rsvp_form_dialog.dart';
 import 'section_title.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -63,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
         Navigator.of(context).pop(); // 안내 모달 닫기
         showDialog(
           context: context,
-          builder: (_) => const AttendanceFormDialog(),
+          builder: (_) => const RsvpFormDialog(),
         );
       },
       // 필요 시 여기서 텍스트들을 주입해서 커스터마이즈 가능
