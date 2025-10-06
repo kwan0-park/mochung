@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'dart:html' as html;
-import 'dart:ui_web' as ui;
+import 'package:url_launcher/url_launcher.dart';
 
 class Map extends StatefulWidget {
   @override
@@ -9,17 +8,34 @@ class Map extends StatefulWidget {
 }
 
 class _MapState extends State<Map> {
-  final API_KEY = "AIzaSyBA0lA83HAYq0dIAIncAznqQgW7RWR0nNY";
+  _launchNaverMap() async {
+    const query = "노블발렌티 삼성점";
+    final encodedQuery = Uri.encodeComponent(query);
+    const appname = "com.example.wedding_invitation";
+    final naverMapAppUrl = Uri.parse('nmap://search?query=$encodedQuery&appname=$appname');
+    final naverMapWebUrl = Uri.parse('https://map.naver.com/v5/search/$encodedQuery');
 
-  Widget getMap() {
-    ui.platformViewRegistry.registerViewFactory('iframe', (int viewId) {
-      var iframe = html.IFrameElement();
-      iframe.src = 'https://www.google.com/maps/embed/v1/place?key=$API_KEY&q=노블발렌티 삼성점';
-      iframe.style.border = 'none';
-      return iframe;
-    });
+    if (await canLaunchUrl(naverMapAppUrl)) {
+      await launchUrl(naverMapAppUrl);
+    } else {
+      await launchUrl(naverMapWebUrl, mode: LaunchMode.externalApplication);
+    }
+  }
 
-    return const HtmlElementView(viewType: 'iframe');
+  _launchKakaoMap() async {
+    const query = "노블발렌티 삼성점";
+    const lat = 37.515488;
+    const lng = 127.064848;
+    final encodedQuery = Uri.encodeComponent(query);
+
+    final kakaoMapAppUrl = Uri.parse('kakaomap://search?q=$encodedQuery&p=$lat,$lng');
+    final kakaoMapWebUrl = Uri.parse('http://m.map.kakao.com/scheme/search?q=$encodedQuery&p=$lat,$lng');
+
+    if (await canLaunchUrl(kakaoMapAppUrl)) {
+      await launchUrl(kakaoMapAppUrl);
+    } else {
+      await launchUrl(kakaoMapWebUrl, mode: LaunchMode.externalApplication);
+    }
   }
 
   @override
@@ -29,12 +45,48 @@ class _MapState extends State<Map> {
         margin: const EdgeInsetsDirectional.all(20.0),
         child: Column(
           children: [
-            Container (
-              child: Image.asset(
-                'assets/images/map.webp',
-                fit: BoxFit.fitWidth,
+            const SizedBox(height: 12),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  width: 0.25,
+                  color: const Color.fromRGBO(41, 82, 56, 1.0)
+                ),
+              ),
+              child: ClipRRect (
+                borderRadius: BorderRadius.circular(20),
+                child: Image.asset(
+                  'assets/images/map.webp',
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
+            const SizedBox(height: 12),
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 8.0,
+              runSpacing: 8.0,
+              children: [
+                ElevatedButton(
+                  onPressed: _launchNaverMap,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                  ),
+                  child: const Text('네이버 지도'),
+                ),
+                ElevatedButton(
+                  onPressed: _launchKakaoMap,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                  ),
+                  child: const Text('카카오맵'),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
             const Text(
               '노블발렌티 삼성점',
               style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
@@ -43,33 +95,24 @@ class _MapState extends State<Map> {
             const Text('02-540-0711',),
             const SizedBox(height: 30),
 
-            // Container(
-            //   width: 500,
-            //   height: 200,
-            //   child: getMap(),
-            // ),
-            // const SizedBox(height: 10,),
-
             const Text(
               '교통 안내',
               style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
             ),
             const Text(
-              '- 지하철: 9호선 봉은사역 4번 출구 도보 5분\n'
-              '- 버스: 봉은사역 3번 출구, 삼성 1파출소 정류장\n'
-              '  지선(초록): 2413, 2415, 3217, 3414, 4318\n'
-              '  간선(파랑): 143, 146, 301, 343, 345, 401\n'
-              '  직행(빨강): 9407, 9507, 9607\n'
+              '- 지하철: 9호선 봉은사역 4번 출구 도보 5분\n' 
+              '- 버스: 봉은사역 3번 출구, 삼성 1파출소 정류장\n' 
               '- 셔틀 운행: 봉은사역 5번 출구, 제2주차장 (5분 간격)',
               style: TextStyle(height: 2,)
             ),
+            const SizedBox(height: 30),
 
             const Text(
               '주차 안내',
               style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
             ),
             const Text(
-              '본관 및 제2주차장 이용 가능\n'
+              '본관 및 제2주차장 이용 가능\n' 
               '(2시간 무료, 제2주차장 도보 4분)',
               style: TextStyle(height: 2,)
             ),
@@ -79,4 +122,3 @@ class _MapState extends State<Map> {
     );
   }
 }
-
