@@ -272,6 +272,7 @@ class _AttendSegment extends StatelessWidget {
               label: '참석 가능',
               icon: Icons.check,
               onTap: () => onChanged(AttendChoice.can),
+              selectedIconColor: Colors.green,
             ),
           ),
           Expanded(
@@ -282,6 +283,7 @@ class _AttendSegment extends StatelessWidget {
               label: '참석 불가',
               icon: Icons.close,
               onTap: () => onChanged(AttendChoice.cannot),
+              selectedIconColor: Colors.red,
             ),
           ),
         ],
@@ -337,6 +339,7 @@ class _SegmentButton extends StatelessWidget {
     required this.label,
     required this.icon,
     required this.onTap,
+    this.selectedIconColor,
   });
 
   final bool selected;
@@ -345,11 +348,13 @@ class _SegmentButton extends StatelessWidget {
   final String label;
   final IconData icon;
   final VoidCallback onTap;
+  final Color? selectedIconColor;
 
   @override
   Widget build(BuildContext context) {
     final bg = selected ? selectedColor : unselectedColor;
     final fg = selected ? Colors.white : const Color(0xFF6B6B6B);
+    final iconColor = selected ? (selectedIconColor ?? fg) : fg;
 
     return Material(
       color: bg,
@@ -360,7 +365,7 @@ class _SegmentButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(icon, size: 18, color: fg),
+              Icon(icon, size: 18, color: iconColor),
               const SizedBox(width: 6),
               Text(label, style: TextStyle(color: fg, fontWeight: FontWeight.w600)),
             ],
