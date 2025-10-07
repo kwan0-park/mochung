@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 enum AttendChoice { can, cannot }
 enum PartySide { groom, bride }
@@ -31,7 +32,19 @@ class _RsvpFormDialogState extends State<RsvpFormDialog> {
     super.dispose();
   }
 
-  void _submit() {
+  int _getCompanionCount() {
+    const companionMap = {
+      '동행인 없음': 0,
+      '외 1명': 1,
+      '외 2명': 2,
+      '외 3명': 3,
+      '외 4명': 4,
+      '외 5명': 5,
+    };
+    return companionMap[_extra] ?? 0;
+  }
+
+  void _submit() async {
     if (!_agree) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('개인정보 수집 및 이용에 동의해 주세요.')),
@@ -41,18 +54,33 @@ class _RsvpFormDialogState extends State<RsvpFormDialog> {
 
     if (_formKey.currentState?.validate() != true) return;
 
-    // 전송 페이로드 예시
+    final supabase = Supabase.instance.client;
     final payload = {
-      'attend': _attend == AttendChoice.can ? '가능' : '불가',
-      'side': _side == PartySide.groom ? '신랑측' : '신부측',
       'name': _nameCtrl.text.trim(),
+      'side': _side == PartySide.groom ? '신랑측' : '신부측',
+      'attend': _attend == AttendChoice.can,
       'meal': _attend == AttendChoice.can ? _meal : null,
-      'extra': _attend == AttendChoice.can ? _extra : null,
+      'companion': _attend == AttendChoice.can ? _getCompanionCount() : 0,
       'agree': _agree,
     };
-    debugPrint('RSVP SUBMIT: $payload');
 
-    Navigator.of(context).pop(); // 닫기(필요시 성공 화면으로 대체)
+    try {
+      await supabase.from('rsvp_responses').insert(payload);
+
+      if (mounted) {
+        Navigator.of(context).pop();
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('참석 정보가 성공적으로 전달되었습니다.')),
+        );
+      }
+    } catch (error) {
+      debugPrint('Supabase insert error: $error');
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('오류가 발생했습니다. 다시 시도해 주세요.')),
+        );
+      }
+    }
   }
 
   @override
