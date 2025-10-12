@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:mochung/common/app_radii.dart';
 
 class Map extends StatefulWidget {
   @override
@@ -48,14 +49,14 @@ class _MapState extends State<Map> {
             const SizedBox(height: 12),
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(bigRadius),
                 border: Border.all(
                   width: 0.25,
                   color: const Color.fromRGBO(41, 82, 56, 1.0)
                 ),
               ),
               child: ClipRRect (
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(bigRadius),
                 child: Image.asset(
                   'assets/images/map.webp',
                   fit: BoxFit.cover,
