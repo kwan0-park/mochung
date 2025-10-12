@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:mochung/common/app_radii.dart';
+import 'package:wedding_invitation/common/app_radii.dart';
 
 class Map extends StatefulWidget {
   @override

@@ -3,7 +3,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/services.dart';
 import 'dart:html' as html;
 import 'dart:ui' as ui;
-import 'package:mochung/common/app_radii.dart';
+import 'package:wedding_invitation/common/app_radii.dart';
 
 final Color indiBlueColor = Color.fromRGBO(102, 142, 170, 1.0);
 final Color indiPinkColor = Color.fromRGBO(206, 131, 131, 1.0);

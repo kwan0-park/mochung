@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mochung/common/app_radii.dart';
+import 'package:wedding_invitation/common/app_radii.dart';
 
 class Story extends StatelessWidget {
   const Story({super.key});
