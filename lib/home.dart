@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/paper.webp'),
+                image: AssetImage('assets/images/paper2.webp'),
                 repeat: ImageRepeat.repeat,
                 opacity: 0.3,
               ),
