@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:wedding_invitation/common/app_radii.dart';
 
 final Color indiBlueColor = Color.fromRGBO(102, 142, 170, 1.0);
 final Color indiPinkColor = Color.fromRGBO(206, 131, 131, 1.0);
@@ -142,11 +143,15 @@ class Invitation extends StatelessWidget {
         margin: const EdgeInsetsDirectional.all(20.0),
         child: Column (
           children: [
+            const SizedBox(height: 20),
             Container (
-              height: 100,
-              child: Image.asset(
-                'assets/images/invitation_otter_cropped.png',
-                fit: BoxFit.contain,
+              height: 150,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(bigRadius),
+                child: Image.asset(
+                  'assets/images/invitation_otter_cropped.png',
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
             const SizedBox(height: 40),
