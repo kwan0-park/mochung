@@ -43,6 +43,7 @@ class _MapState extends State<Map> {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
+        width: 500.0,
         margin: const EdgeInsetsDirectional.all(20.0),
         child: Column(
           children: [
@@ -64,26 +65,36 @@ class _MapState extends State<Map> {
               ),
             ),
             const SizedBox(height: 12),
-            Wrap(
-              alignment: WrapAlignment.center,
-              spacing: 8.0,
-              runSpacing: 8.0,
+            Row(
               children: [
-                ElevatedButton(
-                  onPressed: _launchNaverMap,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: _launchNaverMap,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(bigRadius),
+                      ),
+                    ),
+                    icon: Image.asset('assets/images/navermap_icon_2.png', width: 24, height: 24),
+                    label: const Text('네이버지도'),
                   ),
-                  child: const Text('네이버 지도'),
                 ),
-                ElevatedButton(
-                  onPressed: _launchKakaoMap,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
+                const SizedBox(width: 8.0),
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: _launchKakaoMap,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(bigRadius),
+                      ),
+                    ),
+                    icon: Image.asset('assets/images/kakaomap_basic.png', width: 24, height: 24),
+                    label: const Text('카카오맵'),
                   ),
-                  child: const Text('카카오맵'),
                 ),
               ],
             ),
