@@ -10,31 +10,43 @@ class Story extends StatelessWidget {
       child: Container(
         width: 500.0,
         margin: const EdgeInsets.all(20.0),
-        child: const Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Column(
           children: [
-            // 왼쪽 - A 인물 소개
-            Expanded(
-              child: Center(
-                child: _PersonCard(
-                  name: '박관영',
-                  hobby: '음악, 수영',
-                  personality: '차분하고 상냥함',
-                  imagePath: 'assets/images/photos/person_pky_photos.webp',
-                ),
+            Container (
+              height: 100,
+              child: Image.asset(
+                'assets/images/boris_barbara.webp',
+                fit: BoxFit.contain,
               ),
             ),
-            SizedBox(width: 10.0),
-            // 오른쪽 - B 인물 소개
-            Expanded(
-              child: Center(
-                child: _PersonCard(
-                  name: '전보광',
-                  hobby: '노래, 인테리어',
-                  personality: '활발하고 긍정적',
-                  imagePath: 'assets/images/photos/person_jbk_photos.webp',
+            const SizedBox(height: 20.0),
+            const Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // 왼쪽 - A 인물 소개
+                Expanded(
+                  child: Center(
+                    child: _PersonCard(
+                      name: '박관영',
+                      hobby: '음악, 수영',
+                      personality: '차분하고 상냥함',
+                      imagePath: 'assets/images/photos/person_pky_photos.webp',
+                    ),
+                  ),
                 ),
-              ),
+                SizedBox(width: 5.0),
+                // 오른쪽 - B 인물 소개
+                Expanded(
+                  child: Center(
+                    child: _PersonCard(
+                      name: '전보광',
+                      hobby: '노래, 인테리어',
+                      personality: '활발하고 긍정적',
+                      imagePath: 'assets/images/photos/person_jbk_photos.webp',
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
