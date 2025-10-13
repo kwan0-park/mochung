@@ -71,7 +71,7 @@ Future<void> showAttendanceInfoDialog(
               const SizedBox(height: 8),
               _InfoRow(icon: Icons.place, text: venueName),
 
-              const SizedBox(height: 24),
+              const SizedBox(height: 48),
 
               // 큰 CTA 버튼 (가로 꽉 차게)
               ElevatedButton(

@@ -22,7 +22,7 @@ class Guide extends StatelessWidget {
             '식사는 코스요리이며, 맥주는 무제한으로 제공됩니다.\n'
             '식사는 예식 30분 전부터 가능합니다.\n'
             '2층에서 식과 함께 먼저 식사할 수 있고,\n'
-            '3층에서 예식 이후 식사할 수 있습니다.',
+            '3층에서 예식 이후 식사할 수 있습니다.\n',
             style: TextStyle(height: 2,),
             textAlign: TextAlign.center,
           ),
