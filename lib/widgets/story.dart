@@ -24,7 +24,7 @@ class Story extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(width: 20.0),
+            SizedBox(width: 10.0),
             // 오른쪽 - B 인물 소개
             Expanded(
               child: Center(
