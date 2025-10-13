@@ -34,7 +34,7 @@ class Story extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: 5.0),
+                SizedBox(height: 10.0),
                 // 오른쪽 - B 인물 소개
                 Expanded(
                   child: Center(
@@ -78,7 +78,7 @@ class _PersonCard extends StatelessWidget {
         side: const BorderSide(width: 0.25, color: Color.fromRGBO(41, 82, 56, 1.0)),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
