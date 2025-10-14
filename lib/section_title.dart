@@ -33,7 +33,7 @@ class SectionTitle extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         AutoSizeText(
-          text,
+          '- $text -',
           textAlign: textAlign,
           style: const TextStyle(
             color: primaryColor,
