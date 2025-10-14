@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-final Color indiBlueColor = Color.fromRGBO(102, 142, 170, 1.0);
-final Color indiPinkColor = Color.fromRGBO(206, 131, 131, 1.0);
+import 'package:wedding_invitation/common/global_variable.dart';
 
 Widget _buildName(String father, mother, relation, name) {
   return Center (
     child: Row (
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('$father · $mother', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-        Text(' 의 $relation ', style: TextStyle(fontSize: 13)),
-        Text(name, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+        Text('$father · $mother', style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+        Text('  의 $relation  ', style: const TextStyle(fontSize: 13)),
+        Text(name, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
       ],
     )
   );
@@ -43,14 +41,14 @@ Widget _buildContactInfo(String who, name, number, Color color) {
         flex: 2,
         child: Align(
           alignment: Alignment.center,
-          child: Text('$who', style: TextStyle(color: color)),
+          child: AutoSizeText(who, style: TextStyle(color: color, fontWeight: FontWeight.bold), maxLines: 1),
         ),
       ),
       Expanded(
         flex: 2,
         child: Align(
           alignment: Alignment.center,
-          child: Text('$name', style: TextStyle(color: Colors.grey)),
+          child: Text('$name', style: const TextStyle(color: Colors.black)),
         ),
       ),
       Expanded(
@@ -90,7 +88,7 @@ Widget _buildPopUpContent() {
         _buildContactInfo('신랑 어머니', '김순례', '010-3307-2155', indiBlueColor),
 
         const SizedBox(height: 10),
-        Divider(thickness: 1, height: 1,),
+        const Divider(thickness: 1, height: 1,),
         const SizedBox(height: 10),
 
         _buildContactInfo('신부', '전보광', '010-3228-3239', indiPinkColor),
@@ -120,15 +118,15 @@ Widget _buildContactButton(BuildContext context) {
     },
     child: Text(
       '                 📞 연락하기                  ',
-      style: TextStyle(color: Color.fromRGBO(41, 82, 56, 100), fontWeight: FontWeight.w600)
+      style: TextStyle(color: primaryColor, fontWeight: FontWeight.w600)
     ),
     style: OutlinedButton.styleFrom(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20.0),
+        borderRadius: BorderRadius.circular(bigRadius),
       ),
       padding: EdgeInsets.all(16.0),
       backgroundColor: const Color(0xFFFFFFFF),
-      side: BorderSide(width: 0.5, color: Color.fromRGBO(41, 82, 56, 100))
+      side: BorderSide(width: 0.5, color: primaryColor)
     ),
   );
 }
@@ -136,32 +134,47 @@ Widget _buildContactButton(BuildContext context) {
 class Invitation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final invitationLines = [
+      '손 꼭 잡고 함께 물 위를 떠다니는 두 해달처럼,',
+      '좋은 일도 힘든 일도 함께 하고 싶은 사람을 만났습니다.',
+      '흘러가는 시간 속에서도 서로를 놓지 않으며',
+      '따뜻한 하루하루를 함께 만들어가려 합니다.',
+      '귀한 걸음 하시어 새로운 시작을 축복해주시면',
+      '감사한 마음으로 잘 살겠습니다.',
+    ];
+    final autoSizeGroup = AutoSizeGroup();
+
     return Center(
       child: Container (
         width: 500.0,
         margin: const EdgeInsetsDirectional.all(20.0),
         child: Column (
           children: [
+            const SizedBox(height: 20),
             Container (
-              height: 100,
-              child: Image.asset(
-                'assets/images/invitation_otter_cropped.png',
-                fit: BoxFit.contain,
+              height: 150,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(bigRadius),
+                child: Image.asset(
+                  'assets/images/invitation_otter_cropped.png',
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
             const SizedBox(height: 40),
-            const AutoSizeText(
-              '손 꼭 잡고 함께 물 위를 떠다니는 두 해달처럼,\n'
-              '좋은 일도 힘든 일도 함께 하고 싶은 사람을 만났습니다.\n'
-              '흘러가는 시간 속에서도 서로를 놓지 않으며\n'
-              '따뜻한 하루하루를 함께 만들어가려 합니다.\n'
-              '귀한 걸음 하시어 새로운 시작을 축복해주시면\n'
-              '감사한 마음으로 잘 살겠습니다.',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 15,
-                height: 2,
-                fontWeight: FontWeight.w600),
+            Column(
+              children: invitationLines.map((line) => AutoSizeText(
+                line,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 15,
+                  height: 2,
+                  fontWeight: FontWeight.w600,
+                ),
+                maxLines: 1,
+                minFontSize: 10,
+                group: autoSizeGroup,
+              )).toList(),
             ),
 
             const SizedBox(height: 50),
@@ -169,16 +182,6 @@ class Invitation extends StatelessWidget {
             const SizedBox(height: 10),
             _buildName('박봉희', '김순례', '장남', '관영'),
             const SizedBox(height: 50),
-            /*
-            Container (
-              height: 350.0,
-              child: Image.asset(
-                'assets/images/invitation.png',
-                fit: BoxFit.fitWidth,
-              ),
-            ),
-            const SizedBox(height: 40),
-            */
             _buildContactButton(context),
           ],
         )

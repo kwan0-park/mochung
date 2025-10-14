@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:wedding_invitation/common/global_variable.dart';
 
 class Map extends StatefulWidget {
   @override
@@ -8,6 +9,8 @@ class Map extends StatefulWidget {
 }
 
 class _MapState extends State<Map> {
+  final descriptionAutoSizeGroup = AutoSizeGroup();
+
   _launchNaverMap() async {
     const query = "노블발렌티 삼성점";
     final encodedQuery = Uri.encodeComponent(query);
@@ -40,22 +43,39 @@ class _MapState extends State<Map> {
 
   @override
   Widget build(BuildContext context) {
+    final trafficDescriptionLines = [
+      '- 지하철: 9호선 봉은사역 4번 출구 도보 5분',
+      '- 버스: 봉은사역 3번 출구, 삼성 1파출소 정류장',
+      '- 셔틀 운행: 봉은사역 5번 출구, 제2주차장 (5분 간격)',
+    ];
+    final parkingDescriptionLines = [
+      '본관 및 제2주차장 이용 가능',
+      '(2시간 무료, 제2주차장 도보 4분)',
+    ];
+
     return Center(
       child: Container(
+        width: 500.0,
         margin: const EdgeInsetsDirectional.all(20.0),
         child: Column(
           children: [
-            const SizedBox(height: 12),
+            const Text(
+              '노블발렌티 삼성점',
+              style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
+            ),
+            const Text('서울 강남구 봉은사로 637',),
+            const Text('02-540-0711',),
+            const SizedBox(height: 36),
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(bigRadius),
                 border: Border.all(
                   width: 0.25,
-                  color: const Color.fromRGBO(41, 82, 56, 1.0)
+                  color: primaryColor
                 ),
               ),
               child: ClipRRect (
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(bigRadius),
                 child: Image.asset(
                   'assets/images/map.webp',
                   fit: BoxFit.cover,
@@ -63,47 +83,54 @@ class _MapState extends State<Map> {
               ),
             ),
             const SizedBox(height: 12),
-            Wrap(
-              alignment: WrapAlignment.center,
-              spacing: 8.0,
-              runSpacing: 8.0,
+            Row(
               children: [
-                ElevatedButton(
-                  onPressed: _launchNaverMap,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: _launchNaverMap,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(bigRadius),
+                      ),
+                    ),
+                    icon: Image.asset('assets/images/navermap_icon_2.png', width: 24, height: 24),
+                    label: const Text('네이버지도'),
                   ),
-                  child: const Text('네이버 지도'),
                 ),
-                ElevatedButton(
-                  onPressed: _launchKakaoMap,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: Colors.black,
+                const SizedBox(width: 8.0),
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: _launchKakaoMap,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(bigRadius),
+                      ),
+                    ),
+                    icon: Image.asset('assets/images/kakaomap_basic.png', width: 24, height: 24),
+                    label: const Text('카카오맵'),
                   ),
-                  child: const Text('카카오맵'),
                 ),
               ],
             ),
-            const SizedBox(height: 12),
-            const Text(
-              '노블발렌티 삼성점',
-              style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
-            ),
-            const Text('서울 강남구 봉은사로 637',),
-            const Text('02-540-0711',),
             const SizedBox(height: 30),
 
             const Text(
               '교통 안내',
               style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
             ),
-            const Text(
-              '- 지하철: 9호선 봉은사역 4번 출구 도보 5분\n' 
-              '- 버스: 봉은사역 3번 출구, 삼성 1파출소 정류장\n' 
-              '- 셔틀 운행: 봉은사역 5번 출구, 제2주차장 (5분 간격)',
-              style: TextStyle(height: 2,)
+            Column(
+              children: trafficDescriptionLines.map((line) => AutoSizeText(
+                line,
+                style: const TextStyle(height: 2,),
+                group: descriptionAutoSizeGroup,
+                maxLines: 1,
+                minFontSize: 10,
+                textAlign: TextAlign.center,
+              )).toList(),
             ),
             const SizedBox(height: 30),
 
@@ -111,10 +138,15 @@ class _MapState extends State<Map> {
               '주차 안내',
               style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
             ),
-            const Text(
-              '본관 및 제2주차장 이용 가능\n' 
-              '(2시간 무료, 제2주차장 도보 4분)',
-              style: TextStyle(height: 2,)
+            Column(
+              children: parkingDescriptionLines.map((line) => AutoSizeText(
+                line,
+                style: const TextStyle(height: 2,),
+                group: descriptionAutoSizeGroup,
+                maxLines: 1,
+                minFontSize: 10,
+                textAlign: TextAlign.center,
+              )).toList(),
             ),
           ],
         ),

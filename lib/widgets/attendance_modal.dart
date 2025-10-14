@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 /// ==== 1) 이미지 같은 '안내 모달' ====
 /// 사용법: showAttendanceInfoDialog(context, onSubmit: () { ... });
@@ -17,85 +18,94 @@ Future<void> showAttendanceInfoDialog(
   return showDialog(
     context: context,
     barrierDismissible: true,
-    builder: (_) => Dialog(
-      insetPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
-      backgroundColor: Colors.white,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 560),
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(24, 16, 24, 24),
-          child: Column(
-            mainAxisSize: MainAxisSize.min, // 내용 높이만큼만
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              // 상단 X 버튼 (Stack 없이 Row로)
-              Row(
-                children: [
-                  const Spacer(),
-                  IconButton(
-                    icon: const Icon(Icons.close),
-                    tooltip: '닫기',
-                    onPressed: () => Navigator.of(context).pop(),
+    builder: (_) {
+      final descriptionLines = description.split('\n');
+      final autoSizeGroup = AutoSizeGroup();
+
+      return Dialog(
+        insetPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 560),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(24, 16, 24, 24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min, // 내용 높이만큼만
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                // 상단 X 버튼 (Stack 없이 Row로)
+                Row(
+                  children: [
+                    const Spacer(),
+                    IconButton(
+                      icon: const Icon(Icons.close),
+                      tooltip: '닫기',
+                      onPressed: () => Navigator.of(context).pop(),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 4),
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w700,
+                    height: 1.25,
                   ),
-                ],
-              ),
-
-              const SizedBox(height: 4),
-              Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w700,
-                  height: 1.25,
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 12),
-              Text(
-                description,
-                style: const TextStyle(
-                  fontSize: 14,
-                  height: 1.6,
-                  color: Color(0xFF5A5A5A),
+                const SizedBox(height: 12),
+                Column(
+                  children: descriptionLines.map((line) => AutoSizeText(
+                    line,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      height: 1.6,
+                      color: Color(0xFF5A5A5A),
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 1,
+                    group: autoSizeGroup,
+                  )).toList(),
                 ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 20),
-              const Divider(height: 1),
-              const SizedBox(height: 16),
+                const SizedBox(height: 20),
+                const Divider(height: 1),
+                const SizedBox(height: 16),
 
-              _InfoRow(icon: Icons.event, text: dateTimeText),
-              const SizedBox(height: 8),
-              _InfoRow(icon: Icons.map, text: streetAddress),
-              const SizedBox(height: 8),
-              _InfoRow(icon: Icons.place, text: venueName),
+                _InfoRow(icon: Icons.event, text: dateTimeText),
+                const SizedBox(height: 8),
+                _InfoRow(icon: Icons.map, text: streetAddress),
+                const SizedBox(height: 8),
+                _InfoRow(icon: Icons.place, text: venueName),
 
-              const SizedBox(height: 24),
+                const SizedBox(height: 48),
 
-              // 큰 CTA 버튼 (가로 꽉 차게)
-              ElevatedButton(
-                onPressed: onPrimaryPressed,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.black,
-                  foregroundColor: Colors.white,
-                  minimumSize: const Size.fromHeight(56),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
+                // 큰 CTA 버튼 (가로 꽉 차게)
+                ElevatedButton(
+                  onPressed: onPrimaryPressed,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                    foregroundColor: Colors.white,
+                    minimumSize: const Size.fromHeight(56),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    elevation: 0,
                   ),
-                  elevation: 0,
+                  child: const Text(
+                    '참석정보 전달하기',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                  ),
                 ),
-                child: const Text(
-                  '참석정보 전달하기',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-                ),
-              ),
-              const SizedBox(height: 24),
-            ],
+                const SizedBox(height: 24),
+              ],
+            ),
           ),
         ),
-      ),
-    ),
+      );
+    }
   );
 }
 

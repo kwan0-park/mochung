@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wedding_invitation/common/global_variable.dart';
 
 enum NavigationDirection { left, right }
 
@@ -129,7 +130,7 @@ class NavigationButton extends StatelessWidget {
           height: 40.0,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: ifEnd ? Colors.grey : Color.fromRGBO(41, 82, 56, 100),
+            color: ifEnd ? Colors.grey : primaryColor,
           ),
           child: Center(
             child: Transform.scale(
