@@ -25,9 +25,7 @@ class SectionTitle extends StatelessWidget {
             width: 250,
             child: const Divider(
               thickness: 1,
-              color: lightPrimaryColor, // 연한 녹색 계열
-              // indent: 60, // 양쪽 여백
-              // endIndent: 60,
+              color: lightPrimaryColor, 
             ),
           ),
         ),

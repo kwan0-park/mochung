@@ -28,34 +28,39 @@ class _GalleryState extends State<Gallery> {
       child: Container(
         width: widget.width,
         margin: const EdgeInsets.all(20.0),
-        child: GridView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: widget.crossAxisCount,
-            crossAxisSpacing: widget.crossAxisSpacing,
-            mainAxisSpacing: widget.mainAxisSpacing,
-          ),
-          itemCount: widget.imageProviders.length,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  PageRouteBuilder(
-                    pageBuilder: (context, animation, secondaryAnimation) => ImagePage(
-                      initialIndex: index,
-                      imageProviders: widget.imageProviders,
-                    ),
+        child: Column(
+          children: [
+            const SizedBox(height: 20),
+            GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: widget.crossAxisCount,
+                crossAxisSpacing: widget.crossAxisSpacing,
+                mainAxisSpacing: widget.mainAxisSpacing,
+              ),
+              itemCount: widget.imageProviders.length,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) => ImagePage(
+                          initialIndex: index,
+                          imageProviders: widget.imageProviders,
+                        ),
+                      ),
+                    );
+                  },
+                  child: Image(
+                    image: widget.imageProviders[index],
+                    fit: BoxFit.cover,
                   ),
                 );
               },
-              child: Image(
-                image: widget.imageProviders[index],
-                fit: BoxFit.cover,
-              ),
-            );
-          },
+            ),
+          ],
         ),
       ),
     );

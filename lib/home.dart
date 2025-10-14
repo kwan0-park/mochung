@@ -113,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 BankAccount(),
                 // const SectionTitle(text: '참석 여부', spacingTop: 60.0,),
                 // Guestbook(),
-                const SectionTitle(text: '', spacingTop: 60.0,),
+                const SizedBox(height: 60.0),
                 DevelopedBy(),
               ],
             ),
