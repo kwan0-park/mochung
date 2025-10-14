@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:wedding_invitation/common/global_variable.dart';
 
 enum AttendChoice { can, cannot }
 enum PartySide { groom, bride }
@@ -328,9 +329,6 @@ class _SideSegment extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const groomColor = Color(0xFF6B8E23); // 올리브그린
-    const brideColor = Color(0xFFC5827D); // 핑크브라운
-
     return ClipRRect(
       borderRadius: BorderRadius.circular(8),
       child: Row(

@@ -53,7 +53,7 @@ class _MapState extends State<Map> {
                 borderRadius: BorderRadius.circular(bigRadius),
                 border: Border.all(
                   width: 0.25,
-                  color: const Color.fromRGBO(41, 82, 56, 1.0)
+                  color: primaryColor
                 ),
               ),
               child: ClipRRect (

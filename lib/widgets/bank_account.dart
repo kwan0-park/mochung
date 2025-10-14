@@ -5,9 +5,6 @@ import 'dart:html' as html;
 import 'dart:ui' as ui;
 import 'package:wedding_invitation/common/global_variable.dart';
 
-final Color indiBlueColor = Color.fromRGBO(102, 142, 170, 1.0);
-final Color indiPinkColor = Color.fromRGBO(206, 131, 131, 1.0);
-
 class BankAccount extends StatelessWidget {
   void _copyToClipboard(String text, BuildContext context) {
     Clipboard.setData(ClipboardData(text: text));
@@ -72,11 +69,11 @@ class BankAccount extends StatelessWidget {
               collapsedBackgroundColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(bigRadius),
-                side: const BorderSide(width: 0.25, color: Color.fromRGBO(41, 82, 56, 1.0)),
+                side: const BorderSide(width: 0.25, color: primaryColor),
               ),
               collapsedShape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(bigRadius),
-                side: const BorderSide(width: 0.25, color: Color.fromRGBO(41, 82, 56, 1.0)),
+                side: const BorderSide(width: 0.25, color: primaryColor),
               ),
               children: <Widget>[
                 _buildExpansionItem(context, '국민', '057-24-0338-924', '박봉희'),
@@ -100,11 +97,11 @@ class BankAccount extends StatelessWidget {
               collapsedBackgroundColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(bigRadius),
-                side: const BorderSide(width: 0.25, color: Color.fromRGBO(41, 82, 56, 1.0)),
+                side: const BorderSide(width: 0.25, color: primaryColor),
               ),
               collapsedShape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(bigRadius),
-                side: const BorderSide(width: 0.25, color: Color.fromRGBO(41, 82, 56, 1.0)),
+                side: const BorderSide(width: 0.25, color: primaryColor),
               ),
               children: <Widget>[
                 _buildExpansionItem(context, '하나', '64791094453707', '전우소'),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:wedding_invitation/common/global_variable.dart';
 
 class SectionTitle extends StatelessWidget {
   final String text;
@@ -24,7 +25,7 @@ class SectionTitle extends StatelessWidget {
             width: 250,
             child: const Divider(
               thickness: 1,
-              color: Color.fromRGBO(41, 82, 56, 0.3), // 연한 녹색 계열
+              color: lightPrimaryColor, // 연한 녹색 계열
               // indent: 60, // 양쪽 여백
               // endIndent: 60,
             ),
@@ -35,7 +36,7 @@ class SectionTitle extends StatelessWidget {
           text,
           textAlign: textAlign,
           style: const TextStyle(
-            color: Color.fromRGBO(41, 82, 56, 1),
+            color: primaryColor,
             fontSize: 20,
             fontWeight: FontWeight.w600,
           ),

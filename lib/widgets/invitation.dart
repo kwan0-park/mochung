@@ -3,16 +3,13 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wedding_invitation/common/global_variable.dart';
 
-final Color indiBlueColor = Color.fromRGBO(102, 142, 170, 1.0);
-final Color indiPinkColor = Color.fromRGBO(206, 131, 131, 1.0);
-
 Widget _buildName(String father, mother, relation, name) {
   return Center (
     child: Row (
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text('$father · $mother', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-        Text(' 의 $relation ', style: TextStyle(fontSize: 13)),
+        Text(' 의 $relation  ', style: TextStyle(fontSize: 13)),
         Text(name, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
       ],
     )
@@ -44,14 +41,14 @@ Widget _buildContactInfo(String who, name, number, Color color) {
         flex: 2,
         child: Align(
           alignment: Alignment.center,
-          child: Text('$who', style: TextStyle(color: color)),
+          child: Text('$who', style: TextStyle(color: color, fontWeight: FontWeight.bold)),
         ),
       ),
       Expanded(
         flex: 2,
         child: Align(
           alignment: Alignment.center,
-          child: Text('$name', style: TextStyle(color: Colors.grey)),
+          child: Text('$name', style: const TextStyle(color: Colors.black)),
         ),
       ),
       Expanded(
@@ -121,7 +118,7 @@ Widget _buildContactButton(BuildContext context) {
     },
     child: Text(
       '                 📞 연락하기                  ',
-      style: TextStyle(color: Color.fromRGBO(41, 82, 56, 100), fontWeight: FontWeight.w600)
+      style: TextStyle(color: primaryColor, fontWeight: FontWeight.w600)
     ),
     style: OutlinedButton.styleFrom(
       shape: RoundedRectangleBorder(
@@ -129,7 +126,7 @@ Widget _buildContactButton(BuildContext context) {
       ),
       padding: EdgeInsets.all(16.0),
       backgroundColor: const Color(0xFFFFFFFF),
-      side: BorderSide(width: 0.5, color: Color.fromRGBO(41, 82, 56, 100))
+      side: BorderSide(width: 0.5, color: primaryColor)
     ),
   );
 }
@@ -174,16 +171,6 @@ class Invitation extends StatelessWidget {
             const SizedBox(height: 10),
             _buildName('박봉희', '김순례', '장남', '관영'),
             const SizedBox(height: 50),
-            /*
-            Container (
-              height: 350.0,
-              child: Image.asset(
-                'assets/images/invitation.png',
-                fit: BoxFit.fitWidth,
-              ),
-            ),
-            const SizedBox(height: 40),
-            */
             _buildContactButton(context),
           ],
         )
