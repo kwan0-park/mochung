@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:wedding_invitation/common/global_variable.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class Story extends StatelessWidget {
   const Story({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final hashtagAutoSizeGroup = AutoSizeGroup();
+
     return Center(
       child: Container(
         width: 500.0,
@@ -20,7 +23,7 @@ class Story extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20.0),
-            const Row(
+            Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // 왼쪽 - A 인물 소개
@@ -31,10 +34,12 @@ class Story extends StatelessWidget {
                       hobby: '음악, 수영',
                       personality: '차분하고 상냥함',
                       imagePath: 'assets/images/photos/person_pky_photos.webp',
+                      hashtag: '#차분함 #상냥함 #무던함',
+                      autoSizeGroup: hashtagAutoSizeGroup,
                     ),
                   ),
                 ),
-                SizedBox(height: 10.0),
+                const SizedBox(width: 10.0),
                 // 오른쪽 - B 인물 소개
                 Expanded(
                   child: Center(
@@ -43,6 +48,8 @@ class Story extends StatelessWidget {
                       hobby: '노래, 인테리어',
                       personality: '활발하고 긍정적',
                       imagePath: 'assets/images/photos/person_jbk_photos.webp',
+                      hashtag: '#활발 #긍정적 #통통튀는매력',
+                      autoSizeGroup: hashtagAutoSizeGroup,
                     ),
                   ),
                 ),
@@ -60,12 +67,16 @@ class _PersonCard extends StatelessWidget {
   final String hobby;
   final String personality;
   final String imagePath;
+  final String hashtag;
+  final AutoSizeGroup autoSizeGroup;
 
   const _PersonCard({
     required this.name,
     required this.hobby,
     required this.personality,
     required this.imagePath,
+    required this.hashtag,
+    required this.autoSizeGroup,
   });
 
   @override
@@ -110,7 +121,17 @@ class _PersonCard extends StatelessWidget {
             const SizedBox(height: 8.0),
             _InfoText(label: '취미', value: hobby),
             const SizedBox(height: 8.0),
-            _InfoText(label: '성격', value: personality),
+            // _InfoText(label: '성격', value: personality),
+            const SizedBox(height: 16.0),
+            AutoSizeText(
+              hashtag,
+              style: const TextStyle(
+                color: Colors.grey,
+                fontSize: 14.0,
+              ),
+              maxLines: 2,
+              group: autoSizeGroup,
+            ),
           ],
         ),
       ),
@@ -129,26 +150,30 @@ class _InfoText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        children: [
-          TextSpan(
-            text: '$label: ',
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.baseline,
+      textBaseline: TextBaseline.alphabetic,
+      children: [
+        Text(
+          '$label: ',
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+            fontSize: 14.0,
+          ),
+        ),
+        Expanded(
+          child: AutoSizeText(
+            value,
             style: const TextStyle(
-              fontWeight: FontWeight.bold,
               color: Colors.black87,
-              fontSize: 16.0,
+              fontSize: 14.0,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
-          TextSpan(
-            text: value,
-            style: const TextStyle(
-              color: Colors.black54,
-              fontSize: 16.0,
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
