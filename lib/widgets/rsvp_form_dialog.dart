@@ -180,7 +180,7 @@ class _RsvpFormDialogState extends State<RsvpFormDialog> {
                         ),
                         const SizedBox(height: 16),
 
-                        const _Labeled('* 추가 인원'),
+                        const _Labeled('* 추가 인원 (영유아 식권은 따로 없습니다.)'),
                         DropdownButtonFormField<String>(
                           value: _extra,
                           isExpanded: true,
