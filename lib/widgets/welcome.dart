@@ -5,7 +5,7 @@ Widget _buildTitle() {
   return Column (
     children: [
       const AutoSizeText (
-        '"We Are Getting Married"',
+        '“We Are Getting Married”',
         textAlign: TextAlign.center,
         style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.w900),
         maxLines: 1,

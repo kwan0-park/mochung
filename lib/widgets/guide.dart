@@ -61,6 +61,7 @@ class Guide extends StatelessWidget {
           //  style: TextStyle(height: 2,),
           //  textAlign: TextAlign.center,
           //),
+          const SizedBox(height: 30),
           const Text(
             '추가 안내',
             style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),

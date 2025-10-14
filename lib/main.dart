@@ -26,7 +26,6 @@ class MyApp extends StatelessWidget {
       title: '박관영❤️전보광 결혼합니다.',
       theme: ThemeData (
         fontFamily: 'GowunBatang',
-        //scaffoldBackgroundColor: const Color.fromARGB(255, 247, 245, 242),
         textTheme: const TextTheme(
           displayLarge: TextStyle(color: Color(0xFF000000)),
           displayMedium: TextStyle(color: Color(0xFF000000)),

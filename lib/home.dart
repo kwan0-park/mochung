@@ -101,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Welcome(),
                 const SectionTitle(text: '소중하고 감사한 당신을 초대합니다.', spacingTop: 20.0,),
                 Invitation(),
-                const SectionTitle(text: '우리의 이야기', spacingTop: 60.0,),
+                const SectionTitle(text: '우리들의 이야기', spacingTop: 60.0,),
                 Story(),
                 const SectionTitle(text: '갤러리', spacingTop: 60.0,),
                 Gallery(imageProviders: GalleryImagePaths.imageProviders, width: 500.0,),
