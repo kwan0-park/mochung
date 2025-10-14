@@ -8,6 +8,9 @@ class Story extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final hashtagAutoSizeGroup = AutoSizeGroup();
+    final nameGroup = AutoSizeGroup();
+    final hobbyGroup = AutoSizeGroup();
+    final personalityGroup = AutoSizeGroup();
 
     return Center(
       child: Container(
@@ -36,6 +39,9 @@ class Story extends StatelessWidget {
                       imagePath: 'assets/images/photos/person_pky_photos.webp',
                       hashtag: '#차분함 #상냥함 #무던함',
                       autoSizeGroup: hashtagAutoSizeGroup,
+                      nameGroup: nameGroup,
+                      hobbyGroup: hobbyGroup,
+                      personalityGroup: personalityGroup,
                     ),
                   ),
                 ),
@@ -50,6 +56,9 @@ class Story extends StatelessWidget {
                       imagePath: 'assets/images/photos/person_jbk_photos.webp',
                       hashtag: '#활발 #긍정적 #통통튀는매력',
                       autoSizeGroup: hashtagAutoSizeGroup,
+                      nameGroup: nameGroup,
+                      hobbyGroup: hobbyGroup,
+                      personalityGroup: personalityGroup,
                     ),
                   ),
                 ),
@@ -69,6 +78,9 @@ class _PersonCard extends StatelessWidget {
   final String imagePath;
   final String hashtag;
   final AutoSizeGroup autoSizeGroup;
+  final AutoSizeGroup nameGroup;
+  final AutoSizeGroup hobbyGroup;
+  final AutoSizeGroup personalityGroup;
 
   const _PersonCard({
     required this.name,
@@ -77,6 +89,9 @@ class _PersonCard extends StatelessWidget {
     required this.imagePath,
     required this.hashtag,
     required this.autoSizeGroup,
+    required this.nameGroup,
+    required this.hobbyGroup,
+    required this.personalityGroup,
   });
 
   @override
@@ -117,11 +132,11 @@ class _PersonCard extends StatelessWidget {
             ),
             const SizedBox(height: 16.0),
             // 인물 정보
-            _InfoText(label: '이름', value: name),
+            _InfoText(label: '이름', value: name, group: nameGroup),
             const SizedBox(height: 8.0),
-            _InfoText(label: '취미', value: hobby),
-            const SizedBox(height: 8.0),
-            // _InfoText(label: '성격', value: personality),
+            _InfoText(label: '취미', value: hobby, group: hobbyGroup),
+            // const SizedBox(height: 8.0),
+            // _InfoText(label: '성격', value: personality, group: personalityGroup),
             const SizedBox(height: 16.0),
             AutoSizeText(
               hashtag,
@@ -130,6 +145,7 @@ class _PersonCard extends StatelessWidget {
                 fontSize: 14.0,
               ),
               maxLines: 2,
+              minFontSize: 10,
               group: autoSizeGroup,
             ),
           ],
@@ -142,10 +158,12 @@ class _PersonCard extends StatelessWidget {
 class _InfoText extends StatelessWidget {
   final String label;
   final String value;
+  final AutoSizeGroup? group;
 
   const _InfoText({
     required this.label,
     required this.value,
+    this.group,
   });
 
   @override
@@ -171,6 +189,8 @@ class _InfoText extends StatelessWidget {
             ),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
+            group: group,
+            minFontSize: 10,
           ),
         ),
       ],
