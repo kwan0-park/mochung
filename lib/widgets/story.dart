@@ -19,7 +19,7 @@ class Story extends StatelessWidget {
         margin: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            const SectionTitle(text: '우리들의 이야기', spacingTop: 60.0,),
+            const SectionTitle(text: '우리들의 이야기', spacingTop: 20.0,),
             Container (
               height: 100,
               child: Image.asset(
@@ -66,6 +66,7 @@ class Story extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 40.0),
           ],
         ),
       ),

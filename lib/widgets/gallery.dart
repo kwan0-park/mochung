@@ -25,44 +25,48 @@ class Gallery extends StatefulWidget {
 class _GalleryState extends State<Gallery> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        width: widget.width,
-        margin: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            const SectionTitle(text: '갤러리', spacingTop: 60.0,),
-            const SizedBox(height: 20),
-            GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: widget.crossAxisCount,
-                crossAxisSpacing: widget.crossAxisSpacing,
-                mainAxisSpacing: widget.mainAxisSpacing,
-              ),
-              itemCount: widget.imageProviders.length,
-              itemBuilder: (context, index) {
-                return GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      PageRouteBuilder(
-                        pageBuilder: (context, animation, secondaryAnimation) => ImagePage(
-                          initialIndex: index,
-                          imageProviders: widget.imageProviders,
+    return Container(
+      color: const Color(0xFFFFFFFF),
+      child: Center(
+        child: Container(
+          width: widget.width,
+          margin: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              const SectionTitle(text: '갤러리', spacingTop: 20.0,),
+              const SizedBox(height: 20),
+              GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: widget.crossAxisCount,
+                  crossAxisSpacing: widget.crossAxisSpacing,
+                  mainAxisSpacing: widget.mainAxisSpacing,
+                ),
+                itemCount: widget.imageProviders.length,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                          pageBuilder: (context, animation, secondaryAnimation) => ImagePage(
+                            initialIndex: index,
+                            imageProviders: widget.imageProviders,
+                          ),
                         ),
-                      ),
-                    );
-                  },
-                  child: Image(
-                    image: widget.imageProviders[index],
-                    fit: BoxFit.cover,
-                  ),
-                );
-              },
-            ),
-          ],
+                      );
+                    },
+                    child: Image(
+                      image: widget.imageProviders[index],
+                      fit: BoxFit.cover,
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 40),
+            ],
+          ),
         ),
       ),
     );

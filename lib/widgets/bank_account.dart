@@ -65,7 +65,7 @@ class BankAccount extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               children: [
-                const SectionTitle(text: '마음 전하는 곳', spacingTop: 60.0,),
+                const SectionTitle(text: '마음 전하는 곳', spacingTop: 20.0,),
                 const SizedBox(height: 20),
                 ExpansionTile(
                   title: Center(

@@ -54,103 +54,107 @@ class _MapState extends State<Map> {
       '(2시간 무료, 제2주차장 도보 4분)',
     ];
 
-    return Center(
-      child: Container(
-        width: 500.0,
-        margin: const EdgeInsetsDirectional.all(20.0),
-        child: Column(
-          children: [
-            const SectionTitle(text: '오시는 길', spacingTop: 60.0,),
-            const Text(
-              '노블발렌티 삼성점',
-              style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
-            ),
-            const Text('서울 강남구 봉은사로 637',),
-            const Text('02-540-0711',),
-            const SizedBox(height: 36),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(bigRadius),
-                border: Border.all(
-                  width: 0.25,
-                  color: primaryColor
-                ),
+    return Container(
+      color: const Color(0xFFFFFFFF),
+      child: Center(
+        child: Container(
+          width: 500.0,
+          margin: const EdgeInsetsDirectional.all(20.0),
+          child: Column(
+            children: [
+              const SectionTitle(text: '오시는 길', spacingTop: 20.0,),
+              const Text(
+                '노블발렌티 삼성점',
+                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
               ),
-              child: ClipRRect (
-                borderRadius: BorderRadius.circular(bigRadius),
-                child: Image.asset(
-                  'assets/images/map.webp',
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            const SizedBox(height: 12),
-            Row(
-              children: [
-                Expanded(
-                  child: ElevatedButton.icon(
-                    onPressed: _launchNaverMap,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(bigRadius),
-                      ),
-                    ),
-                    icon: Image.asset('assets/images/navermap_icon_2.png', width: 24, height: 24),
-                    label: const Text('네이버지도'),
+              const Text('서울 강남구 봉은사로 637',),
+              const Text('02-540-0711',),
+              const SizedBox(height: 36),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(bigRadius),
+                  border: Border.all(
+                    width: 0.25,
+                    color: primaryColor
                   ),
                 ),
-                const SizedBox(width: 8.0),
-                Expanded(
-                  child: ElevatedButton.icon(
-                    onPressed: _launchKakaoMap,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(bigRadius),
-                      ),
-                    ),
-                    icon: Image.asset('assets/images/kakaomap_basic.png', width: 24, height: 24),
-                    label: const Text('카카오맵'),
+                child: ClipRRect (
+                  borderRadius: BorderRadius.circular(bigRadius),
+                  child: Image.asset(
+                    'assets/images/map.webp',
+                    fit: BoxFit.cover,
                   ),
                 ),
-              ],
-            ),
-            const SizedBox(height: 30),
+              ),
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      onPressed: _launchNaverMap,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.black,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(bigRadius),
+                        ),
+                      ),
+                      icon: Image.asset('assets/images/navermap_icon_2.png', width: 24, height: 24),
+                      label: const Text('네이버지도'),
+                    ),
+                  ),
+                  const SizedBox(width: 8.0),
+                  Expanded(
+                    child: ElevatedButton.icon(
+                      onPressed: _launchKakaoMap,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        foregroundColor: Colors.black,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(bigRadius),
+                        ),
+                      ),
+                      icon: Image.asset('assets/images/kakaomap_basic.png', width: 24, height: 24),
+                      label: const Text('카카오맵'),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 30),
 
-            const Text(
-              '교통 안내',
-              style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
-            ),
-            Column(
-              children: trafficDescriptionLines.map((line) => AutoSizeText(
-                line,
-                style: const TextStyle(height: 2,),
-                group: descriptionAutoSizeGroup,
-                maxLines: 1,
-                minFontSize: 10,
-                textAlign: TextAlign.center,
-              )).toList(),
-            ),
-            const SizedBox(height: 30),
+              const Text(
+                '교통 안내',
+                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
+              ),
+              Column(
+                children: trafficDescriptionLines.map((line) => AutoSizeText(
+                  line,
+                  style: const TextStyle(height: 2,),
+                  group: descriptionAutoSizeGroup,
+                  maxLines: 1,
+                  minFontSize: 10,
+                  textAlign: TextAlign.center,
+                )).toList(),
+              ),
+              const SizedBox(height: 30),
 
-            const Text(
-              '주차 안내',
-              style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
-            ),
-            Column(
-              children: parkingDescriptionLines.map((line) => AutoSizeText(
-                line,
-                style: const TextStyle(height: 2,),
-                group: descriptionAutoSizeGroup,
-                maxLines: 1,
-                minFontSize: 10,
-                textAlign: TextAlign.center,
-              )).toList(),
-            ),
-          ],
+              const Text(
+                '주차 안내',
+                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
+              ),
+              Column(
+                children: parkingDescriptionLines.map((line) => AutoSizeText(
+                  line,
+                  style: const TextStyle(height: 2,),
+                  group: descriptionAutoSizeGroup,
+                  maxLines: 1,
+                  minFontSize: 10,
+                  textAlign: TextAlign.center,
+                )).toList(),
+              ),
+              const SizedBox(height: 40),
+            ],
+          ),
         ),
       ),
     );

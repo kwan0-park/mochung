@@ -145,49 +145,53 @@ class Invitation extends StatelessWidget {
     ];
     final autoSizeGroup = AutoSizeGroup();
 
-    return Center(
-      child: Container (
-        width: 500.0,
-        margin: const EdgeInsetsDirectional.all(20.0),
-        child: Column (
-          children: [
-            const SectionTitle(text: '소중하고 감사한 당신을 초대합니다.', spacingTop: 20.0,),
-            const SizedBox(height: 20),
-            Container (
-              height: 150,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(bigRadius),
-                child: Image.asset(
-                  'assets/images/invitation_otter_cropped.png',
-                  fit: BoxFit.contain,
+    return Container(
+      color: const Color(0xFFFFFFFF),
+      child: Center(
+        child: Container (
+          width: 500.0,
+          margin: const EdgeInsetsDirectional.all(20.0),
+          child: Column (
+            children: [
+              const SectionTitle(text: '소중하고 감사한 당신을 초대합니다.', spacingTop: 20.0,),
+              const SizedBox(height: 20),
+              Container (
+                height: 150,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(bigRadius),
+                  child: Image.asset(
+                    'assets/images/invitation_otter_cropped.png',
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 40),
-            Column(
-              children: invitationLines.map((line) => AutoSizeText(
-                line,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 15,
-                  height: 2,
-                  fontWeight: FontWeight.w600,
-                ),
-                maxLines: 1,
-                minFontSize: 10,
-                group: autoSizeGroup,
-              )).toList(),
-            ),
+              const SizedBox(height: 40),
+              Column(
+                children: invitationLines.map((line) => AutoSizeText(
+                  line,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontSize: 15,
+                    height: 2,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  maxLines: 1,
+                  minFontSize: 10,
+                  group: autoSizeGroup,
+                )).toList(),
+              ),
 
-            const SizedBox(height: 50),
-            _buildName('전우소', '이민리', '장녀', '보광'),
-            const SizedBox(height: 10),
-            _buildName('박봉희', '김순례', '장남', '관영'),
-            const SizedBox(height: 50),
-            _buildContactButton(context),
-          ],
+              const SizedBox(height: 50),
+              _buildName('전우소', '이민리', '장녀', '보광'),
+              const SizedBox(height: 10),
+              _buildName('박봉희', '김순례', '장남', '관영'),
+              const SizedBox(height: 50),
+              _buildContactButton(context),
+              const SizedBox(height: 40),
+            ],
+          )
         )
-      )
+      ),
     );
   }
 }
