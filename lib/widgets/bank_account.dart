@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/services.dart';
 import 'package:wedding_invitation/common/global_variable.dart';
+import 'package:wedding_invitation/section_title.dart';
 
 class BankAccount extends StatelessWidget {
   void _copyToClipboard(String text, BuildContext context) {
@@ -56,71 +57,77 @@ class BankAccount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 500.0,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(
-          children: [
-            const SizedBox(height: 20),
-            ExpansionTile(
-              title: Center(
-                child: Text(
-                  '       신랑측',
-                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, color: indiBlueColor),
+    return Column(
+      children: [
+        Container(
+          width: 500.0,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Column(
+              children: [
+                const SectionTitle(text: '마음 전하는 곳', spacingTop: 60.0,),
+                const SizedBox(height: 20),
+                ExpansionTile(
+                  title: Center(
+                    child: Text(
+                      '       신랑측',
+                      style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, color: indiBlueColor),
+                    ),
+                  ),
+                  initiallyExpanded: false,
+                  backgroundColor: Colors.white,
+                  collapsedBackgroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(bigRadius),
+                    side: const BorderSide(width: 0.25, color: primaryColor),
+                  ),
+                  collapsedShape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(bigRadius),
+                    side: const BorderSide(width: 0.25, color: primaryColor),
+                  ),
+                  children: <Widget>[
+                    _buildExpansionItem(context, '신랑', '새마을금고', '9003-242628-139', '박관영', indiBlueColor),
+                    const SizedBox(height: 10),
+                    _buildExpansionItem(context, '신랑 아버지', '국민은행', '057-24-0338-924', '박봉희', indiBlueColor),
+                    const SizedBox(height: 10),
+                    _buildExpansionItem(context, '신랑 어머니', '국민은행', '353-21-0165-491', '김순례', indiBlueColor),
+                    const SizedBox(height: 10),
+                  ]
                 ),
-              ),
-              initiallyExpanded: false,
-              backgroundColor: Colors.white,
-              collapsedBackgroundColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(bigRadius),
-                side: const BorderSide(width: 0.25, color: primaryColor),
-              ),
-              collapsedShape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(bigRadius),
-                side: const BorderSide(width: 0.25, color: primaryColor),
-              ),
-              children: <Widget>[
-                _buildExpansionItem(context, '신랑', '새마을금고', '9003-242628-139', '박관영', indiBlueColor),
                 const SizedBox(height: 10),
-                _buildExpansionItem(context, '신랑 아버지', '국민은행', '057-24-0338-924', '박봉희', indiBlueColor),
-                const SizedBox(height: 10),
-                _buildExpansionItem(context, '신랑 어머니', '국민은행', '353-21-0165-491', '김순례', indiBlueColor),
-                const SizedBox(height: 10),
-              ]
-            ),
-            const SizedBox(height: 10),
-            ExpansionTile(
-              title: Center(
-                child: Text(
-                  '       신부측',
-                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, color: indiPinkColor),
+                ExpansionTile(
+                  title: Center(
+                    child: Text(
+                      '       신부측',
+                      style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, color: indiPinkColor),
+                    ),
+                  ),
+                  initiallyExpanded: false,
+                  backgroundColor: Colors.white,
+                  collapsedBackgroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(bigRadius),
+                    side: const BorderSide(width: 0.25, color: primaryColor),
+                  ),
+                  collapsedShape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(bigRadius),
+                    side: const BorderSide(width: 0.25, color: primaryColor),
+                  ),
+                  children: <Widget>[
+                    _buildExpansionItem(context, '신부', '우리은행', '1002347748808', '전보광', indiPinkColor),
+                    const SizedBox(height: 10),
+                    _buildExpansionItem(context, '신부 아버지', '하나은행', '64791094453707', '전우소', indiPinkColor),
+                    const SizedBox(height: 10),
+                    _buildExpansionItem(context, '신부 어머니', '신한은행', '110275673426', '이민리', indiPinkColor),
+                    const SizedBox(height: 10),
+                  ]
                 ),
-              ),
-              initiallyExpanded: false,
-              backgroundColor: Colors.white,
-              collapsedBackgroundColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(bigRadius),
-                side: const BorderSide(width: 0.25, color: primaryColor),
-              ),
-              collapsedShape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(bigRadius),
-                side: const BorderSide(width: 0.25, color: primaryColor),
-              ),
-              children: <Widget>[
-                _buildExpansionItem(context, '신부', '우리은행', '1002347748808', '전보광', indiPinkColor),
-                const SizedBox(height: 10),
-                _buildExpansionItem(context, '신부 아버지', '하나은행', '64791094453707', '전우소', indiPinkColor),
-                const SizedBox(height: 10),
-                _buildExpansionItem(context, '신부 어머니', '신한은행', '110275673426', '이민리', indiPinkColor),
-                const SizedBox(height: 10),
-              ]
+              ],
             ),
-          ],
+          ),
         ),
-      ),
+        const SizedBox(height: 60.0),
+      ],
     );
   }
 }

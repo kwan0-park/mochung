@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wedding_invitation/section_title.dart';
 import 'package:wedding_invitation/widgets/image_page.dart';
 
 class Gallery extends StatefulWidget {
@@ -30,6 +31,7 @@ class _GalleryState extends State<Gallery> {
         margin: const EdgeInsets.all(20.0),
         child: Column(
           children: [
+            const SectionTitle(text: '갤러리', spacingTop: 60.0,),
             const SizedBox(height: 20),
             GridView.builder(
               shrinkWrap: true,

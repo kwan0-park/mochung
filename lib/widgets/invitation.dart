@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wedding_invitation/common/global_variable.dart';
+import 'package:wedding_invitation/section_title.dart';
 
 Widget _buildName(String father, mother, relation, name) {
   return Center (
@@ -150,6 +151,7 @@ class Invitation extends StatelessWidget {
         margin: const EdgeInsetsDirectional.all(20.0),
         child: Column (
           children: [
+            const SectionTitle(text: '소중하고 감사한 당신을 초대합니다.', spacingTop: 20.0,),
             const SizedBox(height: 20),
             Container (
               height: 150,

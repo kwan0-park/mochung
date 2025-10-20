@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wedding_invitation/common/global_variable.dart';
+import 'package:wedding_invitation/section_title.dart';
 
 class Map extends StatefulWidget {
   @override
@@ -59,6 +60,7 @@ class _MapState extends State<Map> {
         margin: const EdgeInsetsDirectional.all(20.0),
         child: Column(
           children: [
+            const SectionTitle(text: '오시는 길', spacingTop: 60.0,),
             const Text(
               '노블발렌티 삼성점',
               style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)

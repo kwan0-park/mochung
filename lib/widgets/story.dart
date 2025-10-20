@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wedding_invitation/common/global_variable.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:wedding_invitation/section_title.dart';
 
 class Story extends StatelessWidget {
   const Story({super.key});
@@ -18,6 +19,7 @@ class Story extends StatelessWidget {
         margin: const EdgeInsets.all(20.0),
         child: Column(
           children: [
+            const SectionTitle(text: '우리들의 이야기', spacingTop: 60.0,),
             Container (
               height: 100,
               child: Image.asset(

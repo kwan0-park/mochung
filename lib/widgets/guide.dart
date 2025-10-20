@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:wedding_invitation/section_title.dart';
 
 class Guide extends StatelessWidget {
   @override
@@ -24,6 +25,7 @@ class Guide extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          const SectionTitle(text: '안내사항', spacingTop: 60.0,),
           const Text(
             '식사 안내',
             style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
