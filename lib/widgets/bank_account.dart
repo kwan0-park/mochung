@@ -67,6 +67,7 @@ class BankAccount extends StatelessWidget {
               children: [
                 const SectionTitle(text: '마음 전하는 곳', spacingTop: 20.0,),
                 const SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ExpansionTile(
                   title: Center(
                     child: Text(

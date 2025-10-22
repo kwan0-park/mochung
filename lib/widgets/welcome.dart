@@ -50,12 +50,12 @@ Widget _buildEventInfo() {
     //color: const Color.fromARGB(255, 247, 245, 242),
     child: const Column (
       children: [
-        Text (
-          '관영과 보광',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),
-        ),
-        SizedBox(height: 20),
+        // Text (
+        //   '박관영 ❤️ 전보광',
+        //   textAlign: TextAlign.center,
+        //   style: TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),
+        // ),
+        // SizedBox(height: 20),
         Text (
           '2026.02.08 SUN 1:00 PM',
           textAlign: TextAlign.center,

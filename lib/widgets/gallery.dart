@@ -34,7 +34,7 @@ class _GalleryState extends State<Gallery> {
           child: Column(
             children: [
               const SectionTitle(text: '갤러리', spacingTop: 20.0,),
-              const SizedBox(height: 20),
+              const SizedBox(height: 40),
               GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),

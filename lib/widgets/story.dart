@@ -20,6 +20,7 @@ class Story extends StatelessWidget {
         child: Column(
           children: [
             const SectionTitle(text: '우리들의 이야기', spacingTop: 20.0,),
+            const SizedBox(height: 20.0),
             Container (
               height: 100,
               child: Image.asset(

@@ -26,6 +26,7 @@ class Guide extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SectionTitle(text: '안내사항', spacingTop: 20.0,),
+          const SizedBox(height: 20.0),
           const Text(
             '식사 안내',
             style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
@@ -63,7 +64,7 @@ class Guide extends StatelessWidget {
           //  style: TextStyle(height: 2,),
           //  textAlign: TextAlign.center,
           //),
-          const SizedBox(height: 30),
+          const SizedBox(height: 10),
           const Text(
             '추가 안내',
             style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),

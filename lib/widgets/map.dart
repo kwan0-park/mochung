@@ -63,6 +63,7 @@ class _MapState extends State<Map> {
           child: Column(
             children: [
               const SectionTitle(text: '오시는 길', spacingTop: 20.0,),
+              const SizedBox(height: 20.0),
               const Text(
                 '노블발렌티 삼성점',
                 style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
