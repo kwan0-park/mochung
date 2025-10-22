@@ -68,8 +68,20 @@ class _MapState extends State<Map> {
                 '노블발렌티 삼성점',
                 style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
               ),
-              const Text('서울 강남구 봉은사로 637',),
-              const Text('02-540-0711',),
+              const Text(
+                '서울 강남구 봉은사로 637',
+                style: TextStyle(
+                  fontWeight: FontWeight.w300,
+                  fontFamily: 'Pretendard',
+                )
+              ),
+              const Text(
+                '02-540-0711',
+                style: TextStyle(
+                  fontWeight: FontWeight.w300,
+                  fontFamily: 'Pretendard',
+                )
+              ),
               const SizedBox(height: 36),
               Container(
                 decoration: BoxDecoration(
@@ -125,12 +137,20 @@ class _MapState extends State<Map> {
 
               const Text(
                 '교통 안내',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
+                style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w600,
+                  height: 3
+                )
               ),
               Column(
                 children: trafficDescriptionLines.map((line) => AutoSizeText(
                   line,
-                  style: const TextStyle(height: 2,),
+                  style: const TextStyle(
+                    height: 2,
+                    fontWeight: FontWeight.w300,
+                    fontFamily: 'Pretendard',
+                  ),
                   group: descriptionAutoSizeGroup,
                   maxLines: 1,
                   minFontSize: 10,
@@ -146,7 +166,11 @@ class _MapState extends State<Map> {
               Column(
                 children: parkingDescriptionLines.map((line) => AutoSizeText(
                   line,
-                  style: const TextStyle(height: 2,),
+                  style: const TextStyle(
+                    height: 2,
+                    fontWeight: FontWeight.w300,
+                    fontFamily: 'Pretendard',
+                  ),
                   group: descriptionAutoSizeGroup,
                   maxLines: 1,
                   minFontSize: 10,

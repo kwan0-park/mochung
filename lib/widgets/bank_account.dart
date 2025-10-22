@@ -57,78 +57,100 @@ class BankAccount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: 500.0,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Column(
-              children: [
-                const SectionTitle(text: '마음 전하는 곳', spacingTop: 20.0,),
-                const SizedBox(height: 20),
-                const SizedBox(height: 20),
-                ExpansionTile(
-                  title: Center(
-                    child: Text(
-                      '       신랑측',
-                      style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, color: indiBlueColor),
-                    ),
-                  ),
-                  initiallyExpanded: false,
-                  backgroundColor: Colors.white,
-                  collapsedBackgroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(bigRadius),
-                    side: const BorderSide(width: 0.25, color: primaryColor),
-                  ),
-                  collapsedShape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(bigRadius),
-                    side: const BorderSide(width: 0.25, color: primaryColor),
-                  ),
-                  children: <Widget>[
-                    _buildExpansionItem(context, '신랑', '새마을금고', '9003-242628-139', '박관영', indiBlueColor),
-                    const SizedBox(height: 10),
-                    _buildExpansionItem(context, '신랑 아버지', '국민은행', '057-24-0338-924', '박봉희', indiBlueColor),
-                    const SizedBox(height: 10),
-                    _buildExpansionItem(context, '신랑 어머니', '국민은행', '353-21-0165-491', '김순례', indiBlueColor),
-                    const SizedBox(height: 10),
-                  ]
+    final bankLines = [
+      '멀리서도 축하의 마음을',
+      '전하고 싶으신 분들을 위해',
+      '계좌번호를 안내드립니다.',
+      '',
+      '소중한 축하를 보내주시는',
+      '따뜻한 마음에 깊이 감사드립니다.',
+    ];
+    final autoSizeGroup = AutoSizeGroup();
+
+    return Container(
+      width: 500.0,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Column(
+          children: [
+            const SectionTitle(text: '마음 전하는 곳', spacingTop: 20.0,),
+            const SizedBox(height: 40),
+            // const SizedBox(height: 20),
+            Column(
+              children: bankLines.map((line) => AutoSizeText(
+                line,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 15,
+                  height: 2,
+                  fontWeight: FontWeight.w300,
+                  fontFamily: 'Pretendard',
                 ),
-                const SizedBox(height: 10),
-                ExpansionTile(
-                  title: Center(
-                    child: Text(
-                      '       신부측',
-                      style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, color: indiPinkColor),
-                    ),
-                  ),
-                  initiallyExpanded: false,
-                  backgroundColor: Colors.white,
-                  collapsedBackgroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(bigRadius),
-                    side: const BorderSide(width: 0.25, color: primaryColor),
-                  ),
-                  collapsedShape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(bigRadius),
-                    side: const BorderSide(width: 0.25, color: primaryColor),
-                  ),
-                  children: <Widget>[
-                    _buildExpansionItem(context, '신부', '우리은행', '1002347748808', '전보광', indiPinkColor),
-                    const SizedBox(height: 10),
-                    _buildExpansionItem(context, '신부 아버지', '하나은행', '64791094453707', '전우소', indiPinkColor),
-                    const SizedBox(height: 10),
-                    _buildExpansionItem(context, '신부 어머니', '신한은행', '110275673426', '이민리', indiPinkColor),
-                    const SizedBox(height: 10),
-                  ]
-                ),
-              ],
+                maxLines: 1,
+                minFontSize: 10,
+                group: autoSizeGroup,
+              )).toList(),
             ),
-          ),
+            const SizedBox(height: 36),
+            ExpansionTile(
+              title: Center(
+                child: Text(
+                  '       신랑측',
+                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, color: indiBlueColor),
+                ),
+              ),
+              initiallyExpanded: false,
+              backgroundColor: Colors.white,
+              collapsedBackgroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(bigRadius),
+                side: const BorderSide(width: 0.25, color: primaryColor),
+              ),
+              collapsedShape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(bigRadius),
+                side: const BorderSide(width: 0.25, color: primaryColor),
+              ),
+              children: <Widget>[
+                _buildExpansionItem(context, '신랑', '새마을금고', '9003-242628-139', '박관영', indiBlueColor),
+                const SizedBox(height: 10),
+                _buildExpansionItem(context, '신랑 아버지', '국민은행', '057-24-0338-924', '박봉희', indiBlueColor),
+                const SizedBox(height: 10),
+                _buildExpansionItem(context, '신랑 어머니', '국민은행', '353-21-0165-491', '김순례', indiBlueColor),
+                const SizedBox(height: 10),
+              ]
+            ),
+            const SizedBox(height: 10),
+            ExpansionTile(
+              title: Center(
+                child: Text(
+                  '       신부측',
+                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, color: indiPinkColor),
+                ),
+              ),
+              initiallyExpanded: false,
+              backgroundColor: Colors.white,
+              collapsedBackgroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(bigRadius),
+                side: const BorderSide(width: 0.25, color: primaryColor),
+              ),
+              collapsedShape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(bigRadius),
+                side: const BorderSide(width: 0.25, color: primaryColor),
+              ),
+              children: <Widget>[
+                _buildExpansionItem(context, '신부', '우리은행', '1002347748808', '전보광', indiPinkColor),
+                const SizedBox(height: 10),
+                _buildExpansionItem(context, '신부 아버지', '하나은행', '64791094453707', '전우소', indiPinkColor),
+                const SizedBox(height: 10),
+                _buildExpansionItem(context, '신부 어머니', '신한은행', '110275673426', '이민리', indiPinkColor),
+                const SizedBox(height: 10),
+              ]
+            ),
+            const SizedBox(height: 60.0),
+          ],
         ),
-        const SizedBox(height: 60.0),
-      ],
+      ),
     );
   }
 }

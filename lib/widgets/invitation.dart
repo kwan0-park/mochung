@@ -174,7 +174,8 @@ class Invitation extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 15,
                     height: 2,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w300,
+                    fontFamily: 'Pretendard',
                   ),
                   maxLines: 1,
                   minFontSize: 10,

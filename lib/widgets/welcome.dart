@@ -7,7 +7,7 @@ Widget _buildTitle() {
       const AutoSizeText (
         '“We Are Getting Married”',
         textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.w900),
+        style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.w400, fontFamily: 'SpecialElite'),
         maxLines: 1,
       ),
       const SizedBox(height: 96),
@@ -59,13 +59,12 @@ Widget _buildEventInfo() {
         Text (
           '2026.02.08 SUN 1:00 PM',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 22.0, height: 2),
-          // style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w600, height: 2),
+          style: TextStyle(fontSize: 22.0, height: 2, fontWeight: FontWeight.w400, fontFamily: 'SpecialElite'),
         ),
         Text (
           '노블발렌티 삼성점',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 22.0, height: 2),
+          style: TextStyle(fontSize: 22.0, height: 2, fontWeight: FontWeight.w400, fontFamily: 'Pretendard'),
         ),
       ]
     ),
@@ -84,7 +83,7 @@ class Welcome extends StatelessWidget {
           children: [
             const SizedBox(height: 80),
             _buildTitle(),
-            const SizedBox(height: 40),
+            const SizedBox(height: 50),
             _buildEventInfo(),
             const SizedBox(height: 60),
           ],

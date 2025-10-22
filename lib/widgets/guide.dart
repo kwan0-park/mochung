@@ -34,7 +34,11 @@ class Guide extends StatelessWidget {
           Column(
             children: mealDescriptionLines.map((line) => AutoSizeText(
               line,
-              style: const TextStyle(height: 2,),
+              style: const TextStyle(
+                height: 2, 
+                fontWeight: FontWeight.w300,
+                fontFamily: 'Pretendard',
+              ),
               textAlign: TextAlign.center,
               group: autoSizeGroup,
               maxLines: 1,
@@ -72,7 +76,11 @@ class Guide extends StatelessWidget {
           Column(
             children: additionalInfoLines.map((line) => AutoSizeText(
               line,
-              style: const TextStyle(height: 2,),
+              style: const TextStyle(
+                height: 2, 
+                fontWeight: FontWeight.w300,
+                fontFamily: 'Pretendard',
+              ),
               textAlign: TextAlign.center,
               group: autoSizeGroup,
               maxLines: 1,
