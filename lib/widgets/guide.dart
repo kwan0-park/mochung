@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:wedding_invitation/section_title.dart';
 
 class Guide extends StatelessWidget {
   @override
@@ -24,6 +25,8 @@ class Guide extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          const SectionTitle(text: '안내사항', spacingTop: 20.0,),
+          const SizedBox(height: 20.0),
           const Text(
             '식사 안내',
             style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
@@ -31,7 +34,11 @@ class Guide extends StatelessWidget {
           Column(
             children: mealDescriptionLines.map((line) => AutoSizeText(
               line,
-              style: const TextStyle(height: 2,),
+              style: const TextStyle(
+                height: 2, 
+                fontWeight: FontWeight.w300,
+                fontFamily: 'Pretendard',
+              ),
               textAlign: TextAlign.center,
               group: autoSizeGroup,
               maxLines: 1,
@@ -61,7 +68,7 @@ class Guide extends StatelessWidget {
           //  style: TextStyle(height: 2,),
           //  textAlign: TextAlign.center,
           //),
-          const SizedBox(height: 30),
+          const SizedBox(height: 10),
           const Text(
             '추가 안내',
             style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
@@ -69,13 +76,18 @@ class Guide extends StatelessWidget {
           Column(
             children: additionalInfoLines.map((line) => AutoSizeText(
               line,
-              style: const TextStyle(height: 2,),
+              style: const TextStyle(
+                height: 2, 
+                fontWeight: FontWeight.w300,
+                fontFamily: 'Pretendard',
+              ),
               textAlign: TextAlign.center,
               group: autoSizeGroup,
               maxLines: 1,
               minFontSize: 10,
             )).toList(),
           ),
+          const SizedBox(height: 40),
         ],
       )
     );

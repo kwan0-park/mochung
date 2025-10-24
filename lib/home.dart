@@ -11,7 +11,6 @@ import 'package:wedding_invitation/widgets/bank_account.dart';
 import 'package:wedding_invitation/widgets/developed_by.dart';
 import 'package:wedding_invitation/widgets/attendance_modal.dart';
 import 'package:wedding_invitation/widgets/rsvp_form_dialog.dart';
-import 'section_title.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -67,10 +66,6 @@ class _MyHomePageState extends State<MyHomePage> {
           builder: (_) => const RsvpFormDialog(),
         );
       },
-      // 필요 시 여기서 텍스트들을 주입해서 커스터마이즈 가능
-      // dateTimeText: '2025.11.01. 토요일 2:00 PM',
-      // streetAddress: '대구 수성구 팔현길 212',
-      // venueName: '대구 호텔인터불고 (만촌) 웨딩파크빌리지',
     );
   }
 
@@ -99,21 +94,12 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column (
               children: [
                 Welcome(),
-                const SectionTitle(text: '소중하고 감사한 당신을 초대합니다.', spacingTop: 20.0,),
                 Invitation(),
-                const SectionTitle(text: '우리들의 이야기', spacingTop: 60.0,),
                 Story(),
-                const SectionTitle(text: '갤러리', spacingTop: 60.0,),
                 Gallery(imageProviders: GalleryImagePaths.imageProviders, width: 500.0,),
-                const SectionTitle(text: '안내사항', spacingTop: 60.0,),
                 Guide(),
-                const SectionTitle(text: '오시는 길', spacingTop: 60.0,),
                 Map(),
-                const SectionTitle(text: '마음 전하는 곳', spacingTop: 60.0,),
                 BankAccount(),
-                // const SectionTitle(text: '참석 여부', spacingTop: 60.0,),
-                // Guestbook(),
-                const SizedBox(height: 60.0),
                 DevelopedBy(),
               ],
             ),

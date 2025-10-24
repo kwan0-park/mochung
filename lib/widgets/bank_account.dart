@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/services.dart';
 import 'package:wedding_invitation/common/global_variable.dart';
+import 'package:wedding_invitation/section_title.dart';
 
 class BankAccount extends StatelessWidget {
   void _copyToClipboard(String text, BuildContext context) {
@@ -56,13 +57,41 @@ class BankAccount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bankLines = [
+      '멀리서도 축하의 마음을',
+      '전하고 싶으신 분들을 위해',
+      '계좌번호를 안내드립니다.',
+      '',
+      '소중한 축하를 보내주시는',
+      '따뜻한 마음에 깊이 감사드립니다.',
+    ];
+    final autoSizeGroup = AutoSizeGroup();
+
     return Container(
       width: 500.0,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: [
-            const SizedBox(height: 20),
+            const SectionTitle(text: '마음 전하는 곳', spacingTop: 20.0,),
+            const SizedBox(height: 40),
+            // const SizedBox(height: 20),
+            Column(
+              children: bankLines.map((line) => AutoSizeText(
+                line,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 15,
+                  height: 2,
+                  fontWeight: FontWeight.w300,
+                  fontFamily: 'Pretendard',
+                ),
+                maxLines: 1,
+                minFontSize: 10,
+                group: autoSizeGroup,
+              )).toList(),
+            ),
+            const SizedBox(height: 36),
             ExpansionTile(
               title: Center(
                 child: Text(
@@ -118,6 +147,7 @@ class BankAccount extends StatelessWidget {
                 const SizedBox(height: 10),
               ]
             ),
+            const SizedBox(height: 60.0),
           ],
         ),
       ),

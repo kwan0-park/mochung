@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wedding_invitation/section_title.dart';
 import 'package:wedding_invitation/widgets/image_page.dart';
 
 class Gallery extends StatefulWidget {
@@ -24,43 +25,48 @@ class Gallery extends StatefulWidget {
 class _GalleryState extends State<Gallery> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        width: widget.width,
-        margin: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            const SizedBox(height: 20),
-            GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: widget.crossAxisCount,
-                crossAxisSpacing: widget.crossAxisSpacing,
-                mainAxisSpacing: widget.mainAxisSpacing,
-              ),
-              itemCount: widget.imageProviders.length,
-              itemBuilder: (context, index) {
-                return GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      PageRouteBuilder(
-                        pageBuilder: (context, animation, secondaryAnimation) => ImagePage(
-                          initialIndex: index,
-                          imageProviders: widget.imageProviders,
+    return Container(
+      color: const Color(0xFFFFFFFF),
+      child: Center(
+        child: Container(
+          width: widget.width,
+          margin: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              const SectionTitle(text: '갤러리', spacingTop: 20.0,),
+              const SizedBox(height: 40),
+              GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: widget.crossAxisCount,
+                  crossAxisSpacing: widget.crossAxisSpacing,
+                  mainAxisSpacing: widget.mainAxisSpacing,
+                ),
+                itemCount: widget.imageProviders.length,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                          pageBuilder: (context, animation, secondaryAnimation) => ImagePage(
+                            initialIndex: index,
+                            imageProviders: widget.imageProviders,
+                          ),
                         ),
-                      ),
-                    );
-                  },
-                  child: Image(
-                    image: widget.imageProviders[index],
-                    fit: BoxFit.cover,
-                  ),
-                );
-              },
-            ),
-          ],
+                      );
+                    },
+                    child: Image(
+                      image: widget.imageProviders[index],
+                      fit: BoxFit.cover,
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 40),
+            ],
+          ),
         ),
       ),
     );
@@ -71,16 +77,34 @@ class GalleryImagePaths {
   static const List<String> paths = [
     'assets/images/photos/m01_photos.webp',
     'assets/images/photos/m02_photos.webp',
-    'assets/images/photos/m03_photos.webp',
+    // 'assets/images/photos/m03_photos.webp',
     'assets/images/photos/m04_photos.webp',
     'assets/images/photos/m05_photos.webp',
     'assets/images/photos/m06_photos.webp',
     'assets/images/photos/m07_photos.webp',
     'assets/images/photos/m08_photos.webp',
     'assets/images/photos/m09_photos.webp',
-    'assets/images/photos/m10_photos.webp',
+    // 'assets/images/photos/m10_photos.webp',
     'assets/images/photos/m11_photos.webp',
-    'assets/images/photos/m12_photos.webp',
+    // 'assets/images/photos/m12_photos.webp',
+    'assets/images/photos/m21_photos.webp',
+    'assets/images/photos/m22_photos.webp',
+    'assets/images/photos/m23_photos.webp',
+    'assets/images/photos/m24_photos.webp',
+    'assets/images/photos/m25_photos.webp',
+    'assets/images/photos/m26_photos.webp',
+    'assets/images/photos/m27_photos.webp',
+    'assets/images/photos/m28_photos.webp',
+    'assets/images/photos/m29_photos.webp',
+    'assets/images/photos/m41_photos.webp',
+    'assets/images/photos/m42_photos.webp',
+    'assets/images/photos/m43_photos.webp',
+    'assets/images/photos/m44_photos.webp',
+    'assets/images/photos/m45_photos.webp',
+    'assets/images/photos/m46_photos.webp',
+    'assets/images/photos/m47_photos.webp',
+    'assets/images/photos/m48_photos.webp',
+    'assets/images/photos/m49_photos.webp',
   ];
 
   static List<ImageProvider> get imageProviders => 
