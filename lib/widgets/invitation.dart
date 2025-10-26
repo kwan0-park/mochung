@@ -4,18 +4,71 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:wedding_invitation/common/global_variable.dart';
 import 'package:wedding_invitation/section_title.dart';
 
-Widget _buildName(String father, mother, relation, name) {
-  return Center (
-    child: Row (
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text('$father · $mother', style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-        Text('  의 $relation  ', style: const TextStyle(fontSize: 13)),
-        Text(name, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-      ],
-    )
+Widget _buildName(String father, String mother, String relation, String name) {
+  return Row(
+    mainAxisSize: MainAxisSize.min,
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      // 👨 첫 번째 묶음: 아버지 · 어머니
+      Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            alignment: Alignment.centerRight,
+            child: Text(
+              father,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          const Text(
+            ' · ',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Container(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              mother,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
+      ),
+      const SizedBox(width: 8), // 두 묶음 사이 간격
+
+      // 👩 두 번째와 세 번째 묶음
+      Row(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            '의 $relation ',
+            style: const TextStyle(
+              fontSize: 13,
+              fontWeight: FontWeight.normal,
+            ),
+          ),
+          Text(
+            ' $name',
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
+    ],
   );
 }
+
 
 void _launchPhoneCall(String phoneNumber) async {
   final uri = Uri.parse('tel:$phoneNumber');
