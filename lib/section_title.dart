@@ -37,7 +37,7 @@ class SectionTitle extends StatelessWidget {
             color: primaryColor,
             fontSize: 20,
             fontWeight: FontWeight.w700,
-            fontFamily: 'Pretendard'
+            fontFamily: 'GowunBatang'
           ),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
