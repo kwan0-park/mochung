@@ -5,12 +5,13 @@ Widget _buildTitle() {
   return Column (
     children: [
       const AutoSizeText (
-        '“We Are Getting Married”',
+        'Come join us\n'
+        'on our wedding day!',
         textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.w400, fontFamily: 'SpecialElite'),
-        maxLines: 1,
+        style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.w400, fontFamily: 'SpecialElite'),
+        maxLines: 2,
       ),
-      const SizedBox(height: 96),
+      const SizedBox(height: 40),
       Container (
         height: 340.0,
         child: Image.asset(
@@ -57,14 +58,16 @@ Widget _buildEventInfo() {
         // ),
         // SizedBox(height: 20),
         Text (
-          '2026.02.08 SUN 1:00 PM',
+          'NOBLE VALENTI SAMSUNG, SEOUL',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 22.0, height: 2, fontWeight: FontWeight.w400, fontFamily: 'SpecialElite'),
+          style: TextStyle(fontSize: 16.0, height: 2, fontWeight: FontWeight.w400, fontFamily: 'SpecialElite'),
         ),
         Text (
-          '노블발렌티 삼성점',
+          'Everyday is a journey,\n'
+          'and journey itself is home.\n'
+          'Now we go on a whole new journey together.',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 22.0, height: 2, fontWeight: FontWeight.w400, fontFamily: 'Pretendard'),
+          style: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w400, fontFamily: 'SpecialElite'),
         ),
       ]
     ),
@@ -83,7 +86,7 @@ class Welcome extends StatelessWidget {
           children: [
             const SizedBox(height: 80),
             _buildTitle(),
-            const SizedBox(height: 50),
+            const SizedBox(height: 40),
             _buildEventInfo(),
             const SizedBox(height: 60),
             const SizedBox(height: 40),
