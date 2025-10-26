@@ -86,6 +86,7 @@ class Welcome extends StatelessWidget {
             const SizedBox(height: 50),
             _buildEventInfo(),
             const SizedBox(height: 60),
+            const SizedBox(height: 40),
           ],
         )
       )
