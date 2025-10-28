@@ -84,7 +84,7 @@ class Welcome extends StatelessWidget {
         margin: const EdgeInsetsDirectional.all(20.0),
         child: Column (
           children: [
-            const SizedBox(height: 80),
+            const SizedBox(height: 40),
             _buildTitle(),
             const SizedBox(height: 40),
             _buildEventInfo(),
