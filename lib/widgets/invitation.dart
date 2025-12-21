@@ -245,7 +245,7 @@ class Invitation extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 180,
+                    width: 150,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: const [
@@ -267,13 +267,13 @@ class Invitation extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 180,
+                    width: 150,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: const [
                         Text(
                           'NOBLE VALENTI\n'
-                          'SAMSUNG',
+                          'SAMSEONG',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 16,

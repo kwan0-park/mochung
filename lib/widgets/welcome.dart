@@ -58,7 +58,7 @@ Widget _buildEventInfo() {
         // ),
         // SizedBox(height: 20),
         Text (
-          'NOBLE VALENTI SAMSUNG, SEOUL',
+          'NOBLE VALENTI SAMSEONG, SEOUL',
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 16.0, height: 2, fontWeight: FontWeight.w400, fontFamily: 'SpecialElite'),
         ),
