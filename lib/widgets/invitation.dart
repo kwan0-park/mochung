@@ -241,6 +241,56 @@ class Invitation extends StatelessWidget {
               const SizedBox(height: 10),
               _buildName('박봉희', '김순례', '장남', '관영'),
               const SizedBox(height: 50),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 180,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: const [
+                        Text(
+                          '2026.02.08\n'
+                          'Sun 1:00 PM',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'SpecialElite',
+                          ),
+                        ),
+                        Text(
+                          '일요일 오후 1시',
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    width: 180,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: const [
+                        Text(
+                          'NOBLE VALENTI\n'
+                          'SAMSUNG',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'SpecialElite',
+                          ),
+                        ),
+                        Text(
+                          '노블발렌티 삼성',
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 50),
               _buildContactButton(context),
               const SizedBox(height: 40),
             ],
