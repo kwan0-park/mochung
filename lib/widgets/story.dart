@@ -19,7 +19,7 @@ class Story extends StatelessWidget {
         margin: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            const SectionTitle(text: '우리들의 이야기', spacingTop: 20.0,),
+            const SectionTitle(text: '우리들의 이야기', spacingTop: 80.0,),
             const SizedBox(height: 20.0),
             Container (
               height: 100,
@@ -40,7 +40,10 @@ class Story extends StatelessWidget {
                       hobby: '음악, 수영',
                       personality: '차분하고 상냥함',
                       imagePath: 'assets/images/photos/person_pky_photos.webp',
-                      hashtag: '#차분함 #상냥함 #무던함',
+                      hashtag: '#상냥함 #무던함 #ENTJ',
+                      hashtagLine1: '#한결 같은 긍정적인 에너지',
+                      hashtagLine2: '#흔들리지 않는 듬직함',
+                      hashtagLine3: '#예측 불가 넘치는 애교',
                       autoSizeGroup: hashtagAutoSizeGroup,
                       nameGroup: nameGroup,
                       hobbyGroup: hobbyGroup,
@@ -57,7 +60,10 @@ class Story extends StatelessWidget {
                       hobby: '노래, 인테리어',
                       personality: '활발하고 긍정적',
                       imagePath: 'assets/images/photos/person_jbk_photos.webp',
-                      hashtag: '#활발 #긍정적 #통통튀는매력',
+                      hashtag: '#명랑 #리더십 #ENFJ',
+                      hashtagLine1: '#감동적인 배려심',
+                      hashtagLine2: '#언제나 통통 튀는 매력',
+                      hashtagLine3: '#지켜주고 싶은 귀여움',
                       autoSizeGroup: hashtagAutoSizeGroup,
                       nameGroup: nameGroup,
                       hobbyGroup: hobbyGroup,
@@ -67,6 +73,7 @@ class Story extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 40.0),
             const SizedBox(height: 40.0),
           ],
         ),
@@ -81,6 +88,9 @@ class _PersonCard extends StatelessWidget {
   final String personality;
   final String imagePath;
   final String hashtag;
+  final String? hashtagLine1;
+  final String? hashtagLine2;
+  final String? hashtagLine3;
   final AutoSizeGroup autoSizeGroup;
   final AutoSizeGroup nameGroup;
   final AutoSizeGroup hobbyGroup;
@@ -92,6 +102,9 @@ class _PersonCard extends StatelessWidget {
     required this.personality,
     required this.imagePath,
     required this.hashtag,
+    this.hashtagLine1,
+    this.hashtagLine2,
+    this.hashtagLine3,
     required this.autoSizeGroup,
     required this.nameGroup,
     required this.hobbyGroup,
@@ -152,6 +165,40 @@ class _PersonCard extends StatelessWidget {
               minFontSize: 10,
               group: autoSizeGroup,
             ),
+            const SizedBox(height: 8.0),
+            if (hashtagLine1 != null)
+              AutoSizeText(
+                hashtagLine1!,
+                style: const TextStyle(
+                  color: Colors.grey,
+                  fontSize: 14.0,
+                ),
+                maxLines: 1,
+                minFontSize: 10,
+                group: autoSizeGroup,
+              ),
+            if (hashtagLine2 != null)
+              AutoSizeText(
+                hashtagLine2!,
+                style: const TextStyle(
+                  color: Colors.grey,
+                  fontSize: 14.0,
+                ),
+                maxLines: 1,
+                minFontSize: 10,
+                group: autoSizeGroup,
+              ),
+            if (hashtagLine3 != null)
+              AutoSizeText(
+                hashtagLine3!,
+                style: const TextStyle(
+                  color: Colors.grey,
+                  fontSize: 14.0,
+                ),
+                maxLines: 1,
+                minFontSize: 10,
+                group: autoSizeGroup,
+              ),
           ],
         ),
       ),

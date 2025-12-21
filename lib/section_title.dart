@@ -31,13 +31,13 @@ class SectionTitle extends StatelessWidget {
         ),
         const SizedBox(height: 20),
         AutoSizeText(
-          '“$text”',
+          '$text',
           textAlign: textAlign,
           style: const TextStyle(
             color: primaryColor,
             fontSize: 20,
             fontWeight: FontWeight.w700,
-            fontFamily: 'Pretendard'
+            fontFamily: 'GowunBatang'
           ),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,

@@ -73,7 +73,7 @@ class BankAccount extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: [
-            const SectionTitle(text: '마음 전하는 곳', spacingTop: 20.0,),
+            const SectionTitle(text: '마음 전하는 곳', spacingTop: 20 + 80,), //이상하게 이 섹션만 20이 부족함
             const SizedBox(height: 40),
             // const SizedBox(height: 20),
             Column(
