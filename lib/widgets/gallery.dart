@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wedding_invitation/common/strings.dart';
 import 'package:wedding_invitation/section_title.dart';
 import 'package:wedding_invitation/widgets/image_page.dart';
 
@@ -33,7 +34,10 @@ class _GalleryState extends State<Gallery> {
           margin: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              const SectionTitle(text: '갤러리', spacingTop: 20.0,),
+              SectionTitle(
+                text: tr2(ko: '갤러리', en: 'Gallery'),
+                spacingTop: 20.0,
+              ),
               const SizedBox(height: 40),
               GridView.builder(
                 shrinkWrap: true,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wedding_invitation/common/global_variable.dart';
+import 'package:wedding_invitation/common/strings.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:wedding_invitation/section_title.dart';
 
@@ -19,7 +20,10 @@ class Story extends StatelessWidget {
         margin: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            const SectionTitle(text: '우리들의 이야기', spacingTop: 80.0,),
+            SectionTitle(
+              text: tr2(ko: '우리들의 이야기', en: 'Our Story'),
+              spacingTop: 80.0,
+            ),
             const SizedBox(height: 20.0),
             Container (
               height: 100,
@@ -36,14 +40,14 @@ class Story extends StatelessWidget {
                 Expanded(
                   child: Center(
                     child: _PersonCard(
-                      name: '박관영',
-                      hobby: '음악, 수영',
-                      personality: '차분하고 상냥함',
+                      name: tr2(ko: '박관영', en: 'Kwanyoung Park'),
+                      hobby: tr2(ko: '음악, 수영', en: 'Music, Swimming'),
+                      personality: tr2(ko: '차분하고 상냥함', en: 'Calm and gentle'),
                       imagePath: 'assets/images/photos/person_pky_photos.webp',
-                      hashtag: '#상냥함 #무던함 #ENTJ',
-                      hashtagLine1: '#한결 같은 긍정적인 에너지',
-                      hashtagLine2: '#흔들리지 않는 듬직함',
-                      hashtagLine3: '#예측 불가 넘치는 애교',
+                      hashtag: tr2(ko: '#상냥함 #무던함 #ENTJ', en: '#Gentle #Easygoing #ENTJ'),
+                      hashtagLine1: tr2(ko: '#한결 같은 긍정적인 에너지', en: '#Consistent positive energy'),
+                      hashtagLine2: tr2(ko: '#흔들리지 않는 듬직함', en: '#Unshakable reliability'),
+                      hashtagLine3: tr2(ko: '#예측 불가 넘치는 애교', en: '#Unpredictable cuteness'),
                       autoSizeGroup: hashtagAutoSizeGroup,
                       nameGroup: nameGroup,
                       hobbyGroup: hobbyGroup,
@@ -56,14 +60,14 @@ class Story extends StatelessWidget {
                 Expanded(
                   child: Center(
                     child: _PersonCard(
-                      name: '전보광',
-                      hobby: '노래, 인테리어',
-                      personality: '활발하고 긍정적',
+                      name: tr2(ko: '전보광', en: 'Bokwang Jeon'),
+                      hobby: tr2(ko: '노래, 인테리어', en: 'Singing, Interior Design'),
+                      personality: tr2(ko: '활발하고 긍정적', en: 'Energetic and Positive'),
                       imagePath: 'assets/images/photos/person_jbk_photos.webp',
-                      hashtag: '#명랑 #리더십 #ENFJ',
-                      hashtagLine1: '#감동적인 배려심',
-                      hashtagLine2: '#언제나 통통 튀는 매력',
-                      hashtagLine3: '#지켜주고 싶은 귀여움',
+                      hashtag: tr2(ko: '#명랑 #리더십 #ENFJ', en: '#Lively #Leadership #ENFJ'),
+                      hashtagLine1: tr2(ko: '#감동적인 배려심', en: '#Empathetic consideration'),
+                      hashtagLine2: tr2(ko: '#언제나 통통 튀는 매력', en: '#Always vibrant charm'),
+                      hashtagLine3: tr2(ko: '#지켜주고 싶은 귀여움', en: '#Cuteness worth protecting'),
                       autoSizeGroup: hashtagAutoSizeGroup,
                       nameGroup: nameGroup,
                       hobbyGroup: hobbyGroup,
