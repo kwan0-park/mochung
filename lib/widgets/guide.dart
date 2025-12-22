@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:wedding_invitation/common/strings.dart';
 import 'package:wedding_invitation/section_title.dart';
 
 class Guide extends StatelessWidget {
@@ -7,15 +8,15 @@ class Guide extends StatelessWidget {
   Widget build(BuildContext context) {
     final autoSizeGroup = AutoSizeGroup();
     final mealDescriptionLines = [
-      '식사는 코스요리이며, 맥주는 무제한으로 제공됩니다.',
-      '식사는 예식 30분 전부터 가능합니다.',
-      '2층에서 식과 함께 먼저 식사할 수 있고,',
-      '3층에서 예식 이후 식사할 수 있습니다.',
+      tr2(ko: '식사는 코스요리이며, 맥주는 무제한으로 제공됩니다.', en: 'The meal is a multi-course dinner, and beer is provided unlimited.'),
+      tr2(ko: '식사는 예식 30분 전부터 가능합니다.', en: 'Meals are available 30 minutes before the ceremony.'),
+      tr2(ko: '2층에서 식과 함께 먼저 식사할 수 있고,', en: 'You can eat on the 2nd floor before the ceremony,'),
+      tr2(ko: '3층에서 예식 이후 식사할 수 있습니다.', en: 'and eat on the 3rd floor after the ceremony.'),
     ];
     final additionalInfoLines = [
-      '화환은 정중히 사양합니다.',
-      '식장에는 ATM이 없지만,',
-      '식장 주변에 여러 은행 지점이 있습니다.',
+      tr2(ko: '화환은 정중히 사양합니다.', en: ''),
+      tr2(ko: '식장에는 ATM이 없지만,', en: ''),
+      tr2(ko: '식장 주변에 여러 은행 지점이 있습니다.', en: ''),
     ];
 
     return Container(
@@ -25,7 +26,10 @@ class Guide extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const SectionTitle(text: '안내사항', spacingTop: 80.0,),
+          SectionTitle(
+            text: tr2(ko: '안내사항', en: 'Guest Guide'),
+            spacingTop: 80.0,
+          ),
           const SizedBox(height: 20.0),
           const Text(
             '식사 안내',

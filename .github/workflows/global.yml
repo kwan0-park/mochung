@@ -1,0 +1,74 @@
+name: Build and deploy flutter web app (root + /en)
+
+on:
+#   push:
+#     branches: [ "dev" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: supabase
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.22.2"
+          channel: "stable"
+
+      - run: flutter pub get
+      - run: flutter config --enable-web
+
+      # ✅ 중요: base-href 플래그를 쓰려면 web/index.html에
+      # <base href="$FLUTTER_BASE_HREF" /> 가 있어야 함
+
+      # 1) KO build -> dist/
+      - name: Build KO (root /)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          flutter build web --release \
+            --base-href "/" \
+            --dart-define=APP_LOCALE=ko \
+            --dart-define=FLUTTER_WEB_USE_SKIA=true \
+            --dart-define=SUPABASE_URL=$SUPABASE_URL \
+            --dart-define=SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY
+
+          rm -rf dist
+          mkdir -p dist
+          cp -r build/web/* dist/
+          # SPA 라우팅 대비
+          cp dist/index.html dist/404.html
+
+      # 2) EN build -> dist/en/
+      - name: Build EN (/en/)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          flutter build web --release \
+            --base-href "/en/" \
+            --dart-define=APP_LOCALE=en \
+            --dart-define=FLUTTER_WEB_USE_SKIA=true \
+            --dart-define=SUPABASE_URL=$SUPABASE_URL \
+            --dart-define=SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY
+
+          mkdir -p dist/en
+          cp -r build/web/* dist/en/
+          # /en/ SPA 라우팅 대비
+          cp dist/en/index.html dist/en/404.html
+
+      # 3) Deploy dist -> gh_pages branch
+      - name: Deploy to gh_pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh_pages
+          publish_dir: ./dist
+          cname: 보관중.life

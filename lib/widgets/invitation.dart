@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wedding_invitation/common/global_variable.dart';
+import 'package:wedding_invitation/common/strings.dart';
 import 'package:wedding_invitation/section_title.dart';
 
 Widget _buildName(String father, String mother, String relation, String name) {
@@ -189,13 +190,34 @@ class Invitation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final invitationLines = [
-      '손 꼭 잡고 함께 물 위를 떠다니는 두 해달처럼,',
-      '좋은 일도 힘든 일도',
-      '함께 하고 싶은 사람을 만났습니다.',
-      '흘러가는 시간 속에서도 서로를 놓지 않으며',
-      '따뜻한 하루하루를 함께 만들어가려 합니다.',
-      '귀한 걸음 하시어 새로운 시작을 축복해주시면',
-      '감사한 마음으로 잘 살겠습니다.',
+      tr2(
+        ko: '손 꼭 잡고 함께 물 위를 떠다니는 두 해달처럼,',
+        en: 'Like two otters floating hand in hand upon the water,',
+      ),
+      tr2(
+        ko: '좋은 일도 힘든 일도',
+        en: 'we have found someone',
+      ),
+      tr2(
+        ko: '함께 하고 싶은 사람을 만났습니다.',
+        en: 'to share both life\'s joys and challenges with.',
+      ),
+      tr2(
+        ko: '흘러가는 시간 속에서도 서로를 놓지 않으며',
+        en: 'As time flows by, we promise to hold on to one another,',
+      ),
+      tr2(
+        ko: '따뜻한 하루하루를 함께 만들어가려 합니다.',
+        en: 'and to create warm and loving days together.',
+      ),
+      tr2(
+        ko: '귀한 걸음 하시어 새로운 시작을 축복해주시면',
+        en: 'We would be honored if you would bless our new beginning,',
+      ),
+      tr2(
+        ko: '감사한 마음으로 잘 살겠습니다.',
+        en: 'as we move forward with hearts full of gratitude.',
+      ),
     ];
     final autoSizeGroup = AutoSizeGroup();
 
@@ -207,7 +229,13 @@ class Invitation extends StatelessWidget {
           margin: const EdgeInsetsDirectional.all(20.0),
           child: Column (
             children: [
-              const SectionTitle(text: '소중하고 감사한 당신을 초대합니다.', spacingTop: 20.0,),
+              SectionTitle(
+                text: tr2(
+                  ko: '소중하고 감사한 당신을 초대합니다.',
+                  en: 'Welcome Invitations',
+                ),
+                spacingTop: 20.0,
+              ),
               const SizedBox(height: 40),
               Container (
                 height: 150,
@@ -237,9 +265,19 @@ class Invitation extends StatelessWidget {
               ),
 
               const SizedBox(height: 50),
-              _buildName('전우소', '이민리', '장녀', '보광'),
+              _buildName(
+                '전우소',
+                '이민리',
+                '장녀',
+                tr2(ko: '보광', en: 'Bokwang'),
+              ),
               const SizedBox(height: 10),
-              _buildName('박봉희', '김순례', '장남', '관영'),
+              _buildName(
+                '박봉희',
+                '김순례',
+                '장남',
+                tr2(ko: '관영', en: 'Kwnayoung'),
+              ),
               const SizedBox(height: 50),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
