@@ -94796,7 +94796,7 @@ return A.cd(s,B.G9,B.l,s,s,s,s,B.eE,s,500)}}
 A.zn.prototype={
 ah(){return new A.TV(B.j)}}
 A.TV.prototype={
-J(a){var s=null,r=this.a,q=r.d,p=A.P2(20,"\uac24\ub7ec\ub9ac")
+J(a){var s=null,r=this.a,q=r.d,p=A.P2(20,"Gallery")
 r=r.c.length
 return A.cd(s,A.e7(A.cd(s,A.cI(A.b([p,B.aV,new A.LA(new A.agX(3,4,4),new A.Pr(new A.ann(this),r,!0,!0,!0,s),s,B.ak,!1,s,s,B.Nw,!0,s,r,B.al,B.zF,s,B.U,s),B.aV],t.p),B.A,B.x,B.E),B.l,s,s,s,s,B.kf,s,q),s,s),B.l,B.i,s,s,s,s,s,s)}}
 A.ann.prototype={
@@ -94816,10 +94816,10 @@ A.a79.prototype={
 $1(a){return new A.jA(a,null,null)},
 $S:563}
 A.LD.prototype={
-J(a){var s,r=null,q=new A.hP(A.w(t.o6,t.i)),p=t.s,o=A.b(["\uc2dd\uc0ac\ub294 \ucf54\uc2a4\uc694\ub9ac\uc774\uba70, \ub9e5\uc8fc\ub294 \ubb34\uc81c\ud55c\uc73c\ub85c \uc81c\uacf5\ub429\ub2c8\ub2e4.","\uc2dd\uc0ac\ub294 \uc608\uc2dd 30\ubd84 \uc804\ubd80\ud130 \uac00\ub2a5\ud569\ub2c8\ub2e4.","2\uce35\uc5d0\uc11c \uc2dd\uacfc \ud568\uaed8 \uba3c\uc800 \uc2dd\uc0ac\ud560 \uc218 \uc788\uace0,","3\uce35\uc5d0\uc11c \uc608\uc2dd \uc774\ud6c4 \uc2dd\uc0ac\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4."],p),n=A.b(["\ud654\ud658\uc740 \uc815\uc911\ud788 \uc0ac\uc591\ud569\ub2c8\ub2e4.","\uc2dd\uc7a5\uc5d0\ub294 ATM\uc774 \uc5c6\uc9c0\ub9cc,","\uc2dd\uc7a5 \uc8fc\ubcc0\uc5d0 \uc5ec\ub7ec \uc740\ud589 \uc9c0\uc810\uc774 \uc788\uc2b5\ub2c8\ub2e4."],p)
+J(a){var s,r=null,q=new A.hP(A.w(t.o6,t.i)),p=t.s,o=A.b(["The meal is a multi-course dinner, and beer is provided unlimited.","Meals are available 30 minutes before the ceremony.","You can eat on the 2nd floor before the ceremony,","and eat on the 3rd floor after the ceremony."],p),n=A.b(["","",""],p)
 p=t.yd
 s=p.i("aE.E")
-return A.cd(r,A.cI(A.b([A.P2(80,"\uc548\ub0b4\uc0ac\ud56d"),B.d9,B.XM,A.cI(A.aa(new A.ah(o,new A.a7Q(q),p),!0,s),B.A,B.x,B.E),B.bK,B.XV,A.cI(A.aa(new A.ah(n,new A.a7R(q),p),!0,s),B.A,B.x,B.E),B.aV,B.aV],t.p),B.A,B.hN,B.E),B.l,r,r,r,r,B.eE,r,500)}}
+return A.cd(r,A.cI(A.b([A.P2(80,"Guest Guide"),B.d9,B.XM,A.cI(A.aa(new A.ah(o,new A.a7Q(q),p),!0,s),B.A,B.x,B.E),B.bK,B.XV,A.cI(A.aa(new A.ah(n,new A.a7R(q),p),!0,s),B.A,B.x,B.E),B.aV,B.aV],t.p),B.A,B.hN,B.E),B.l,r,r,r,r,B.eE,r,500)}}
 A.a7Q.prototype={
 $1(a){return A.hf(a,this.a,1,10,null,B.iH,B.ao)},
 $S:40}
@@ -94886,8 +94886,8 @@ $1(a){var s=null
 return new A.rB(A.e7(s,s,s),A.cd(s,A.cI(A.b([A.I4("\uc2e0\ub791","\ubc15\uad00\uc601","010-5586-2155",B.cN),B.iA,A.I4("\uc2e0\ub791 \uc544\ubc84\uc9c0","\ubc15\ubd09\ud76c","010-4280-2155",B.cN),B.iA,A.I4("\uc2e0\ub791 \uc5b4\uba38\ub2c8","\uae40\uc21c\ub840","010-3307-2155",B.cN),B.bK,B.GX,B.bK,A.I4("\uc2e0\ubd80","\uc804\ubcf4\uad11","010-3228-3239",B.cO),B.iA,A.I4("\uc2e0\ubd80 \uc544\ubc84\uc9c0","\uc804\uc6b0\uc18c","010-5170-7701",B.cO),B.iA,A.I4("\uc2e0\ubd80 \uc5b4\uba38\ub2c8","\uc774\ubbfc\ub9ac","010-6670-3239",B.cO)],t.p),B.A,B.x,B.aP),B.l,s,s,s,s,s,s,500),s)},
 $S:565}
 A.M1.prototype={
-J(a){var s=null,r=A.b(["\uc190 \uaf2d \uc7a1\uace0 \ud568\uaed8 \ubb3c \uc704\ub97c \ub5a0\ub2e4\ub2c8\ub294 \ub450 \ud574\ub2ec\ucc98\ub7fc,","\uc88b\uc740 \uc77c\ub3c4 \ud798\ub4e0 \uc77c\ub3c4","\ud568\uaed8 \ud558\uace0 \uc2f6\uc740 \uc0ac\ub78c\uc744 \ub9cc\ub0ac\uc2b5\ub2c8\ub2e4.","\ud758\ub7ec\uac00\ub294 \uc2dc\uac04 \uc18d\uc5d0\uc11c\ub3c4 \uc11c\ub85c\ub97c \ub193\uc9c0 \uc54a\uc73c\uba70","\ub530\ub73b\ud55c \ud558\ub8e8\ud558\ub8e8\ub97c \ud568\uaed8 \ub9cc\ub4e4\uc5b4\uac00\ub824 \ud569\ub2c8\ub2e4.","\uadc0\ud55c \uac78\uc74c \ud558\uc2dc\uc5b4 \uc0c8\ub85c\uc6b4 \uc2dc\uc791\uc744 \ucd95\ubcf5\ud574\uc8fc\uc2dc\uba74","\uac10\uc0ac\ud55c \ub9c8\uc74c\uc73c\ub85c \uc798 \uc0b4\uaca0\uc2b5\ub2c8\ub2e4."],t.s),q=t.yd
-return A.cd(s,A.e7(A.cd(s,A.cI(A.b([A.P2(20,"\uc18c\uc911\ud558\uace0 \uac10\uc0ac\ud55c \ub2f9\uc2e0\uc744 \ucd08\ub300\ud569\ub2c8\ub2e4."),B.aV,A.cd(s,A.y7(A.dz(6),A.tB("assets/images/invitation_otter_cropped.png",s,B.jl,s,s),B.b2),B.l,s,s,s,150,s,s,s),B.aV,A.cI(A.aa(new A.ah(r,new A.a9o(new A.hP(A.w(t.o6,t.i))),q),!0,q.i("aE.E")),B.A,B.x,B.E),B.lT,A.aF3("\uc804\uc6b0\uc18c","\uc774\ubbfc\ub9ac","\uc7a5\ub140","\ubcf4\uad11"),B.bK,A.aF3("\ubc15\ubd09\ud76c","\uae40\uc21c\ub840","\uc7a5\ub0a8","\uad00\uc601"),B.lT,B.PH,B.lT,A.aSm(a),B.aV],t.p),B.A,B.x,B.E),B.l,s,s,s,s,B.eE,s,500),s,s),B.l,B.i,s,s,s,s,s,s)}}
+J(a){var s=null,r=A.b(["Like two otters floating hand in hand upon the water,","we have found someone","to share both life's joys and challenges with.","As time flows by, we promise to hold on to one another,","and to create warm and loving days together.","We would be honored if you would bless our new beginning,","as we move forward with hearts full of gratitude."],t.s),q=t.yd
+return A.cd(s,A.e7(A.cd(s,A.cI(A.b([A.P2(20,"Welcome Invitations"),B.aV,A.cd(s,A.y7(A.dz(6),A.tB("assets/images/invitation_otter_cropped.png",s,B.jl,s,s),B.b2),B.l,s,s,s,150,s,s,s),B.aV,A.cI(A.aa(new A.ah(r,new A.a9o(new A.hP(A.w(t.o6,t.i))),q),!0,q.i("aE.E")),B.A,B.x,B.E),B.lT,A.aF3("\uc804\uc6b0\uc18c","\uc774\ubbfc\ub9ac","\uc7a5\ub140","Bokwang"),B.bK,A.aF3("\ubc15\ubd09\ud76c","\uae40\uc21c\ub840","\uc7a5\ub0a8","Kwnayoung"),B.lT,B.PH,B.lT,A.aSm(a),B.aV],t.p),B.A,B.x,B.E),B.l,s,s,s,s,B.eE,s,500),s,s),B.l,B.i,s,s,s,s,s,s)}}
 A.a9o.prototype={
 $1(a){return A.hf(a,this.a,1,10,null,B.AX,B.ao)},
 $S:40}
@@ -94929,9 +94929,9 @@ return A.y(A.rr(o,B.oX),$async$q5)
 case 7:case 3:return A.C(null,r)}})
 return A.D($async$q5,r)},
 J(a){var s,r,q,p,o,n,m,l,k=this,j=null,i=t.s,h=A.b(["- \uc9c0\ud558\ucca0: 9\ud638\uc120 \ubd09\uc740\uc0ac\uc5ed 4\ubc88 \ucd9c\uad6c \ub3c4\ubcf4 5\ubd84","- \ubc84\uc2a4: \ubd09\uc740\uc0ac\uc5ed 3\ubc88 \ucd9c\uad6c, \uc0bc\uc131 1\ud30c\ucd9c\uc18c \uc815\ub958\uc7a5","- \uc154\ud2c0 \uc6b4\ud589: \ubd09\uc740\uc0ac\uc5ed 5\ubc88 \ucd9c\uad6c, \uc81c2\uc8fc\ucc28\uc7a5 (5\ubd84 \uac04\uaca9)"],i),g=A.b(["\ubcf8\uad00 \ubc0f \uc81c2\uc8fc\ucc28\uc7a5 \uc774\uc6a9 \uac00\ub2a5","(2\uc2dc\uac04 \ubb34\ub8cc, \uc81c2\uc8fc\ucc28\uc7a5 \ub3c4\ubcf4 4\ubd84)"],i)
-i=A.P2(20,"\uc624\uc2dc\ub294 \uae38")
-s=A.cH("\ub178\ube14\ubc1c\ub80c\ud2f0 \uc0bc\uc131\uc810",j,j,j,j,j,j,j,B.ft,j,j,j)
-r=A.cH("\uc11c\uc6b8 \uac15\ub0a8\uad6c \ubd09\uc740\uc0ac\ub85c 637",j,j,j,j,j,j,j,B.AY,j,j,j)
+i=A.P2(20,"Directions")
+s=A.cH("NOBLE VALENTI SAMSEONG",j,j,j,j,j,j,j,B.ft,j,j,j)
+r=A.cH("bongeunsa-ro 637 gangnam-gu, seoul",j,j,j,j,j,j,j,B.AY,j,j,j)
 q=A.dz(6)
 p=A.avS(B.dr,0.25)
 q=A.cd(j,A.y7(A.dz(6),A.tB("assets/images/map.webp",j,B.jm,j,j),B.b2),B.l,j,j,new A.dA(j,j,p,q,j,j,B.aO),j,j,j,j)
@@ -95143,7 +95143,7 @@ return A.cd(s,A.cI(A.b([B.XC,B.e0,B.XI,B.e0,A.dZ(A.b([new A.xW(this.c,this.d,s),
 A.PU.prototype={
 J(a){var s=null,r=t.o6,q=t.i,p=new A.hP(A.w(r,q)),o=new A.hP(A.w(r,q)),n=new A.hP(A.w(r,q)),m=new A.hP(A.w(r,q))
 q=t.p
-return A.e7(A.cd(s,A.cI(A.b([A.P2(80,"\uc6b0\ub9ac\ub4e4\uc758 \uc774\uc57c\uae30"),B.d9,A.cd(s,A.tB("assets/images/boris_barbara.webp",s,B.jl,s,s),B.l,s,s,s,100,s,s,s),B.d9,A.dZ(A.b([A.eB(A.e7(A.aEr(p,"#\uc0c1\ub0e5\ud568 #\ubb34\ub358\ud568 #ENTJ","#\ud55c\uacb0 \uac19\uc740 \uae0d\uc815\uc801\uc778 \uc5d0\ub108\uc9c0","#\ud754\ub4e4\ub9ac\uc9c0 \uc54a\ub294 \ub4ec\uc9c1\ud568","#\uc608\uce21 \ubd88\uac00 \ub118\uce58\ub294 \uc560\uad50","\uc74c\uc545, \uc218\uc601",n,"assets/images/photos/person_pky_photos.webp","\ubc15\uad00\uc601",o,"\ucc28\ubd84\ud558\uace0 \uc0c1\ub0e5\ud568",m),s,s),1),B.AB,A.eB(A.e7(A.aEr(p,"#\uba85\ub791 #\ub9ac\ub354\uc2ed #ENFJ","#\uac10\ub3d9\uc801\uc778 \ubc30\ub824\uc2ec","#\uc5b8\uc81c\ub098 \ud1b5\ud1b5 \ud280\ub294 \ub9e4\ub825","#\uc9c0\ucf1c\uc8fc\uace0 \uc2f6\uc740 \uadc0\uc5ec\uc6c0","\ub178\ub798, \uc778\ud14c\ub9ac\uc5b4",n,"assets/images/photos/person_jbk_photos.webp","\uc804\ubcf4\uad11",o,"\ud65c\ubc1c\ud558\uace0 \uae0d\uc815\uc801",m),s,s),1)],q),B.du,B.x,B.E,s),B.aV,B.aV],q),B.A,B.x,B.E),B.l,s,s,s,s,B.kf,s,500),s,s)}}
+return A.e7(A.cd(s,A.cI(A.b([A.P2(80,"Our Story"),B.d9,A.cd(s,A.tB("assets/images/boris_barbara.webp",s,B.jl,s,s),B.l,s,s,s,100,s,s,s),B.d9,A.dZ(A.b([A.eB(A.e7(A.aEr(p,"#Gentle #Easygoing #ENTJ","#Consistent positive energy","#Unshakable reliability","#Unpredictable cuteness","Music, Swimming",n,"assets/images/photos/person_pky_photos.webp","Kwanyoung Park",o,"Calm and gentle",m),s,s),1),B.AB,A.eB(A.e7(A.aEr(p,"#Lively #Leadership #ENFJ","#Empathetic consideration","#Always vibrant charm","#Cuteness worth protecting","Singing, Interior Design",n,"assets/images/photos/person_jbk_photos.webp","Bokwang Jeon",o,"Energetic and Positive",m),s,s),1)],q),B.du,B.x,B.E,s),B.aV,B.aV],q),B.A,B.x,B.E),B.l,s,s,s,s,B.kf,s,500),s,s)}}
 A.VG.prototype={
 J(a){var s=this,r=null,q=A.dz(6),p=s.z,o=A.b([A.y7(A.dz(3),A.tB(s.f,new A.apr(),B.jm,200,1/0),B.b2),B.cH,new A.F0("\uc774\ub984",s.c,s.Q,r),B.e0,new A.F0("\ucde8\ubbf8",s.d,s.as,r),B.cH,A.hf(s.r,p,2,10,r,B.iK,r),B.e0],t.p)
 o.push(A.hf(s.w,p,1,10,r,B.iK,r))
