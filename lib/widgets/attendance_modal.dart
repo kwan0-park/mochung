@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:wedding_invitation/common/strings.dart';
 
 /// ==== 1) 이미지 같은 '안내 모달' ====
 /// 사용법: showAttendanceInfoDialog(context, onSubmit: () { ... });
@@ -7,19 +8,28 @@ Future<void> showAttendanceInfoDialog(
   BuildContext context,
   {
     required VoidCallback onPrimaryPressed,
-    String title = '참석정보 전달하기',
-    String description =
-        '축하의 마음으로 예식에 참석하시는\n모든 분들을 더욱 귀하게 모실 수 있도록\n참석 정보 전달을 부탁드립니다.',
-    String dateTimeText = '2026.02.08. 일요일 1:00 PM',
-    String streetAddress = '서울 강남구 봉은사로 637',
-    String venueName = '노블발렌티 삼성점',
+    String? title,
+    String? description,
+    String? dateTimeText,
+    String? streetAddress,
+    String? venueName,
   }
 ) {
   return showDialog(
     context: context,
     barrierDismissible: true,
     builder: (_) {
-      final descriptionLines = description.split('\n');
+      final resolvedTitle = title ?? tr2(ko: '참석정보 전달하기', en: 'Share Attendance Info');
+      final resolvedDescription = description ??
+          tr2(
+            ko: '축하의 마음으로 예식에 참석하시는\n모든 분들을 더욱 귀하게 모실 수 있도록\n참석 정보 전달을 부탁드립니다.',
+            en: 'Please share your attendance information\nso we can warmly welcome everyone\nwho joins the ceremony.',
+          );
+      final resolvedDateTimeText = dateTimeText ?? tr2(ko: '2026.02.08. 일요일 1:00 PM', en: '2026.02.08. Sunday 1:00 PM');
+      final resolvedStreetAddress = streetAddress ?? tr2(ko: '서울 강남구 봉은사로 637', en: '637 Bongeunsa-ro, Gangnam-gu, Seoul');
+      final resolvedVenueName = venueName ?? tr2(ko: '노블발렌티 삼성점', en: 'Noble Valenti Samseong');
+
+      final descriptionLines = resolvedDescription.split('\n');
       final autoSizeGroup = AutoSizeGroup();
 
       return Dialog(
@@ -48,7 +58,7 @@ Future<void> showAttendanceInfoDialog(
 
                 const SizedBox(height: 4),
                 Text(
-                  title,
+                  resolvedTitle,
                   style: const TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w700,
@@ -74,11 +84,11 @@ Future<void> showAttendanceInfoDialog(
                 const Divider(height: 1),
                 const SizedBox(height: 16),
 
-                _InfoRow(icon: Icons.event, text: dateTimeText),
+                _InfoRow(icon: Icons.event, text: resolvedDateTimeText),
                 const SizedBox(height: 8),
-                _InfoRow(icon: Icons.map, text: streetAddress),
+                _InfoRow(icon: Icons.map, text: resolvedStreetAddress),
                 const SizedBox(height: 8),
-                _InfoRow(icon: Icons.place, text: venueName),
+                _InfoRow(icon: Icons.place, text: resolvedVenueName),
 
                 const SizedBox(height: 48),
 
@@ -94,9 +104,9 @@ Future<void> showAttendanceInfoDialog(
                     ),
                     elevation: 0,
                   ),
-                  child: const Text(
-                    '참석정보 전달하기',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                  child: Text(
+                    tr2(ko: '참석정보 전달하기', en: 'Share it'),
+                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
                   ),
                 ),
                 const SizedBox(height: 24),

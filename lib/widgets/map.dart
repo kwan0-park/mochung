@@ -46,13 +46,13 @@ class _MapState extends State<Map> {
   @override
   Widget build(BuildContext context) {
     final trafficDescriptionLines = [
-      '- 지하철: 9호선 봉은사역 4번 출구 도보 5분',
-      '- 버스: 봉은사역 3번 출구, 삼성 1파출소 정류장',
-      '- 셔틀 운행: 봉은사역 5번 출구, 제2주차장 (5분 간격)',
+      tr2(ko: '- 지하철: 9호선 봉은사역 4번 출구 도보 5분', en: '- Subway: Line 9 Bongeunsa Station exit 4, 5 min walk'),
+      tr2(ko: '- 버스: 봉은사역 3번 출구, 삼성 1파출소 정류장', en: '- Bus: Bongeunsa Station exit 3, Samseong Police Box stop'),
+      tr2(ko: '- 셔틀 운행: 봉은사역 5번 출구, 제2주차장 (5분 간격)', en: '- Shuttle: Bongeunsa Station exit 5 to 2nd parking lot (every 5 min)'),
     ];
     final parkingDescriptionLines = [
-      '본관 및 제2주차장 이용 가능',
-      '(2시간 무료, 제2주차장 도보 4분)',
+      tr2(ko: '본관 및 제2주차장 이용 가능', en: 'Use main parking or 2nd lot'),
+      tr2(ko: '(2시간 무료, 제2주차장 도보 4분)', en: '(2 hours free, 4 min walk from 2nd lot)'),
     ];
 
     return Container(
@@ -143,9 +143,9 @@ class _MapState extends State<Map> {
               ),
               const SizedBox(height: 30),
 
-              const Text(
-                '교통 안내',
-                style: TextStyle(
+              Text(
+                tr2(ko: '교통 안내', en: 'Transportation'),
+                style: const TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.w600,
                   height: 3
@@ -167,9 +167,9 @@ class _MapState extends State<Map> {
               ),
               const SizedBox(height: 30),
 
-              const Text(
-                '주차 안내',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
+              Text(
+                tr2(ko: '주차 안내', en: 'Parking'),
+                style: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3)
               ),
               Column(
                 children: parkingDescriptionLines.map((line) => AutoSizeText(

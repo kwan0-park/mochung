@@ -172,8 +172,11 @@ Widget _buildContactButton(BuildContext context) {
       );
     },
     child: Text(
-      '                 📞 연락하기                  ',
-      style: TextStyle(color: primaryColor, fontWeight: FontWeight.w600)
+      tr2(
+        ko: '                 📞 연락하기                  ',
+        en: '                 📞 CALL                  ',
+      ),
+      style: TextStyle(color: primaryColor, fontWeight: FontWeight.w600),
     ),
     style: OutlinedButton.styleFrom(
       shape: RoundedRectangleBorder(
@@ -276,18 +279,18 @@ class Invitation extends StatelessWidget {
                 '박봉희',
                 '김순례',
                 '장남',
-                tr2(ko: '관영', en: 'Kwnayoung'),
+                tr2(ko: '관영', en: 'Kwanyoung'),
               ),
               const SizedBox(height: 50),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
                     width: 150,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
-                        Text(
+                      children: [
+                        const Text(
                           '2026.02.08\n'
                           'Sun 1:00 PM',
                           textAlign: TextAlign.center,
@@ -298,7 +301,7 @@ class Invitation extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '일요일 오후 1시',
+                          tr2(ko: '일요일 오후 1시', en: ''),
                           textAlign: TextAlign.center,
                         ),
                       ],
@@ -308,8 +311,8 @@ class Invitation extends StatelessWidget {
                     width: 150,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
-                        Text(
+                      children: [
+                        const Text(
                           'NOBLE VALENTI\n'
                           'SAMSEONG',
                           textAlign: TextAlign.center,
@@ -320,7 +323,7 @@ class Invitation extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '노블발렌티 삼성',
+                          tr2(ko: '노블발렌티 삼성', en: ''),
                           textAlign: TextAlign.center,
                         ),
                       ],

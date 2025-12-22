@@ -14,9 +14,9 @@ class Guide extends StatelessWidget {
       tr2(ko: '3층에서 예식 이후 식사할 수 있습니다.', en: 'and eat on the 3rd floor after the ceremony.'),
     ];
     final additionalInfoLines = [
-      tr2(ko: '화환은 정중히 사양합니다.', en: ''),
-      tr2(ko: '식장에는 ATM이 없지만,', en: ''),
-      tr2(ko: '식장 주변에 여러 은행 지점이 있습니다.', en: ''),
+      '화환은 정중히 사양합니다.',
+      '식장에는 ATM이 없지만,',
+      '식장 주변에 여러 은행 지점이 있습니다.',
     ];
 
     return Container(
@@ -31,9 +31,9 @@ class Guide extends StatelessWidget {
             spacingTop: 80.0,
           ),
           const SizedBox(height: 20.0),
-          const Text(
-            '식사 안내',
-            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
+          Text(
+            tr2(ko: '식사 안내', en: 'Meal Info'),
+            style: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
           ),
           Column(
             children: mealDescriptionLines.map((line) => AutoSizeText(
@@ -72,25 +72,27 @@ class Guide extends StatelessWidget {
           //  style: TextStyle(height: 2,),
           //  textAlign: TextAlign.center,
           //),
-          const SizedBox(height: 10),
-          const Text(
-            '추가 안내',
-            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
-          ),
-          Column(
-            children: additionalInfoLines.map((line) => AutoSizeText(
-              line,
-              style: const TextStyle(
-                height: 2, 
-                fontWeight: FontWeight.w300,
-                fontFamily: 'Pretendard',
-              ),
-              textAlign: TextAlign.center,
-              group: autoSizeGroup,
-              maxLines: 1,
-              minFontSize: 10,
-            )).toList(),
-          ),
+          if (AppLocale.isKo) ...[
+            const SizedBox(height: 10),
+            const Text(
+              '추가 안내',
+              style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600, height: 3),
+            ),
+            Column(
+              children: additionalInfoLines.map((line) => AutoSizeText(
+                line,
+                style: const TextStyle(
+                  height: 2, 
+                  fontWeight: FontWeight.w300,
+                  fontFamily: 'Pretendard',
+                ),
+                textAlign: TextAlign.center,
+                group: autoSizeGroup,
+                maxLines: 1,
+                minFontSize: 10,
+              )).toList(),
+            ),
+          ],
           const SizedBox(height: 40),
           const SizedBox(height: 40),
         ],
