@@ -77,7 +77,7 @@ class _MapState extends State<Map> {
                 )
               ),
               Text(
-                tr2(ko: '서울 강남구 봉은사로 637', en: 'bongeunsa-ro 637 gangnam-gu, seoul'),
+                tr2(ko: '서울 강남구 봉은사로 637', en: 'Bongeunsa-ro 637 Gangnam-gu, Seoul'),
                 style: const TextStyle(
                   fontWeight: FontWeight.w300,
                   fontFamily: 'Pretendard',
@@ -121,7 +121,7 @@ class _MapState extends State<Map> {
                         ),
                       ),
                       icon: Image.asset('assets/images/navermap_icon_2.png', width: 24, height: 24),
-                      label: const Text('네이버지도'),
+                      label: Text(tr2(ko: '네이버지도', en: 'Naver Map')),
                     ),
                   ),
                   const SizedBox(width: 8.0),
@@ -136,7 +136,7 @@ class _MapState extends State<Map> {
                         ),
                       ),
                       icon: Image.asset('assets/images/kakaomap_basic.png', width: 24, height: 24),
-                      label: const Text('카카오맵'),
+                      label: Text(tr2(ko: '카카오맵', en: 'Kakao Map')),
                     ),
                   ),
                 ],

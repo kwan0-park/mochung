@@ -164,7 +164,7 @@ Widget _buildContactButton(BuildContext context) {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Center(
+            title: const Center(
               /*child: Text('연락하기', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold))*/),
             content: _buildPopUpContent(),
           );
@@ -199,7 +199,7 @@ class Invitation extends StatelessWidget {
       ),
       tr2(
         ko: '좋은 일도 힘든 일도',
-        en: 'we have found someone',
+        en: 'we have found each other',
       ),
       tr2(
         ko: '함께 하고 싶은 사람을 만났습니다.',
@@ -207,7 +207,7 @@ class Invitation extends StatelessWidget {
       ),
       tr2(
         ko: '흘러가는 시간 속에서도 서로를 놓지 않으며',
-        en: 'As time flows by, we promise to hold on to one another,',
+        en: 'We promise to hold on to one another,',
       ),
       tr2(
         ko: '따뜻한 하루하루를 함께 만들어가려 합니다.',
@@ -235,7 +235,7 @@ class Invitation extends StatelessWidget {
               SectionTitle(
                 text: tr2(
                   ko: '소중하고 감사한 당신을 초대합니다.',
-                  en: 'Welcome Invitations',
+                  en: 'We are getting married!',
                 ),
                 spacingTop: 20.0,
               ),
@@ -313,8 +313,8 @@ class Invitation extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         const Text(
-                          'NOBLE VALENTI\n'
-                          'SAMSEONG',
+                          'Noble Valenti\n'
+                          'Samseong',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 16,

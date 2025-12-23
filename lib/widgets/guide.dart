@@ -8,10 +8,10 @@ class Guide extends StatelessWidget {
   Widget build(BuildContext context) {
     final autoSizeGroup = AutoSizeGroup();
     final mealDescriptionLines = [
-      tr2(ko: '식사는 코스요리이며, 맥주는 무제한으로 제공됩니다.', en: 'The meal is a multi-course dinner, and beer is provided unlimited.'),
-      tr2(ko: '식사는 예식 30분 전부터 가능합니다.', en: 'Meals are available 30 minutes before the ceremony.'),
-      tr2(ko: '2층에서 식과 함께 먼저 식사할 수 있고,', en: 'You can eat on the 2nd floor before the ceremony,'),
-      tr2(ko: '3층에서 예식 이후 식사할 수 있습니다.', en: 'and eat on the 3rd floor after the ceremony.'),
+      tr2(ko: '식사는 코스요리이며, 맥주는 무제한으로 제공됩니다.', en: 'A course meal will be served, and beer is provided unlimited.'),
+      tr2(ko: '식사는 예식 30분 전부터 가능합니다.', en: 'You can dine on the 3rd floor after the ceremony.'),
+      tr2(ko: '2층에서 식과 함께 먼저 식사할 수 있고,', en: ''),
+      tr2(ko: '3층에서 예식 이후 식사할 수 있습니다.', en: ''),
     ];
     final additionalInfoLines = [
       '화환은 정중히 사양합니다.',
