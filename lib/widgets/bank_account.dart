@@ -111,7 +111,7 @@ class BankAccount extends StatelessWidget {
                 side: const BorderSide(width: 0.25, color: primaryColor),
               ),
               children: <Widget>[
-                _buildExpansionItem(context, '신랑', '새마을금고', '9003-242628-139', '박관영', indiBlueColor),
+                _buildExpansionItem(context, '신랑', '카카오뱅크', '3333-30-8785132', '박관영', indiBlueColor),
                 const SizedBox(height: 10),
                 _buildExpansionItem(context, '신랑 아버지', '국민은행', '057-24-0338-924', '박봉희', indiBlueColor),
                 const SizedBox(height: 10),
@@ -139,7 +139,7 @@ class BankAccount extends StatelessWidget {
                 side: const BorderSide(width: 0.25, color: primaryColor),
               ),
               children: <Widget>[
-                _buildExpansionItem(context, '신부', '우리은행', '1002347748808', '전보광', indiPinkColor),
+                _buildExpansionItem(context, '신부', '카카오뱅크', '7942-10-11921', '전보광', indiPinkColor),
                 const SizedBox(height: 10),
                 _buildExpansionItem(context, '신부 아버지', '하나은행', '64791094453707', '전우소', indiPinkColor),
                 const SizedBox(height: 10),
